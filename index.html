@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Aditya Kumar Tiwari, a cybersecurity enthusiast, web developer, and lifelong learner.">
+    <meta property="og:title" content="Aditya Kumar Tiwari Portfolio">
+    <meta property="og:description" content="Portfolio of Aditya Kumar Tiwari, showcasing skills in cybersecurity, web development, and projects.">
+    <meta property="og:image" content="profile.jpg">
+    <meta property="og:url" content="https://your-portfolio-url.com">
+    <title>Aditya Kumar Tiwari Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        header.navbar-scrolled {
+            background-color: #444;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        header nav a:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
+
+        main {
+            margin: 80px 20px 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        main h2 {
+            margin-top: 0;
+            color: #333;
+            position: relative;
+        }
+
+        main h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: #333;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            transition: width 0.3s;
+        }
+
+        main h2:hover::after {
+            width: 100px;
+        }
+
+        /* Typewriter Effect for Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            animation: backgroundShift 10s infinite alternate;
+        }
+
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .hero-section h1 {
+            font-size: 3em;
+            margin: 0;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-section p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            font-weight: 300;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        /* Skill Progress Bars */
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills ul li {
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar div {
+            height: 20px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            width: 0;
+            border-radius: 20px;
+            transition: width 1s;
+        }
+
+        .skills ul li:hover .progress-bar div {
+            width: 80%;
+        }
+
+        /* Project Cards */
+        .project-card {
+            display: inline-block;
+            width: calc(33.333% - 20px);
+            margin: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #0072ff;
+            box-shadow: 0 0 5px rgba(0, 114, 255, 0.5);
+        }
+
+        .contact-form button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #555;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #f4f4f4;
+        }
+
+        .dark-mode header {
+            background-color: #1a1a1a;
+            color: #f4f4f4;
+        }
+
+        .dark-mode main {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+
+        .dark-mode .contact-form input,
+        .dark-mode .contact-form textarea {
+            background-color: #444;
+            color: #f4f4f4;
+        }
+
+        .dark-mode .progress-bar {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+
+        footer a {
+            color: #f4f4f4;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .back-to-top.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="navbar">
+        <nav>
+            <a href="#about" aria-label="About">About</a>
+            <a href="#skills" aria-label="Skills">Skills</a>
+            <a href="#projects" aria-label="Projects">Projects</a>
+            <a href="#contact" aria-label="Contact">Contact</a>
+            <button aria-label="Toggle dark mode" onclick="toggleDarkMode()">Dark Mode</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>Aditya Kumar Tiwari</h1>
+            <p>Cybersecurity Enthusiast | Web Developer</p>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Passionate about cybersecurity and web development...</p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML/CSS/JavaScript
+                    <div class="progress-bar">
+                        <div style="width: 80%;"></div>
+                    </div>
+                </li>
+                <li>Cybersecurity
+                    <div class="progress-bar">
+                        <div style="width: 75%;"></div>
+                    </div>
+                </li>
+                <li>React/Node.js
+                    <div class="progress-bar">
+                        <div style="width: 70%;"></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>Innova E-commerce Platform</h3>
+                <p>An e-commerce platform with innovative features...</p>
+                <a href="#" aria-label="View project details">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Movie Streaming Website</h3>
+                <p>A responsive movie streaming site with rich media content...</p>
+                <a href="#" aria-label="View project details">View Project</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <form class="contact-form" aria-label="Contact form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" aria-label="Your name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" aria-label="Your email address" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" aria-label="Your message" required></textarea>
+
+                <button type="submit" aria-label="Submit your message">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Aditya Kumar Tiwari. All Rights Reserved.</p>
+        <a href="https://linkedin.com/in/aditya-tiwari" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://github.com/aditya-tiwari" aria-label="GitHub">GitHub</a>
+        <a href="https://twitter.com/aditya-tiwari" aria-label="Twitter">Twitter</a>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script>
+        // Toggle dark mode
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode);
+        }
+
+        // Load dark mode state from localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            const darkMode = localStorage.getItem('darkMode') === 'true';
+            if (darkMode) {
+                document.body.classList.add('dark-mode');
+            }
+        });
+
+        // Sticky Navbar
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</body>
+
+</html>
