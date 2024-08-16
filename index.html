@@ -7,8 +7,9 @@
     <meta name="description" content="Portfolio of Aditya Kumar Tiwari, a cybersecurity enthusiast, web developer, and lifelong learner.">
     <meta property="og:title" content="Aditya Kumar Tiwari Portfolio">
     <meta property="og:description" content="Portfolio of Aditya Kumar Tiwari, showcasing skills in cybersecurity, web development, and projects.">
-    <meta property="og:image" content="profile.jpg">
-    <meta property="og:url" content="https://your-portfolio-url.com">
+    <meta property="og:image" content="link_to_image.jpg" alt="Portfolio Image">
+    <meta property="og:url" content="https://adityatiwari.com">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Aditya Kumar Tiwari Portfolio</title>
     <style>
         /* General Styles */
@@ -38,10 +39,16 @@
             background-color: #444;
         }
 
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
         header nav a {
             color: #fff;
             text-decoration: none;
-            margin: 0 15px;
             padding: 10px 15px;
             border-radius: 5px;
             transition: background-color 0.3s, transform 0.3s;
@@ -52,12 +59,42 @@
             transform: scale(1.05);
         }
 
+        header nav button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        header nav button:hover {
+            color: #ffdd57;
+        }
+
+        .dark-mode header {
+            background-color: #1a1a1a;
+        }
+
+        .dark-mode header nav a {
+            color: #ccc;
+        }
+
+        .dark-mode header nav a:hover {
+            background-color: #444;
+        }
+
+        .dark-mode header nav button {
+            color: #ffdd57;
+        }
+
         main {
             margin: 80px 20px 20px;
             padding: 20px;
             background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
         }
 
         main h2 {
@@ -69,9 +106,9 @@
         main h2::after {
             content: '';
             display: block;
-            width: 50px;
-            height: 2px;
-            background-color: #333;
+            width: 60px;
+            height: 3px;
+            background-color: #0072ff;
             margin-top: 10px;
             margin-bottom: 20px;
             transition: width 0.3s;
@@ -84,19 +121,24 @@
         /* Typewriter Effect for Hero Section */
         .hero-section {
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
             background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
             color: white;
             animation: backgroundShift 10s infinite alternate;
         }
 
         @keyframes backgroundShift {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
         }
 
         .hero-section h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin: 0;
             animation: fadeInUp 1.5s ease-out;
         }
@@ -106,6 +148,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
@@ -113,7 +156,7 @@
         }
 
         .hero-section p {
-            font-size: 1.5em;
+            font-size: 1.7em;
             margin-top: 20px;
             font-weight: 300;
             animation: fadeInUp 2s ease-out;
@@ -126,185 +169,287 @@
         }
 
         .skills ul li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             overflow: hidden;
+            font-size: 1.1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .progress-bar {
-            width: 100%;
+            width: 80%;
             background-color: #ddd;
-            border-radius: 20px;
+            border-radius: 25px;
             overflow: hidden;
             position: relative;
+            flex: 1;
+            margin-left: 15px;
         }
 
-        .progress-bar div {
+        .progress-bar-fill {
             height: 20px;
             background: linear-gradient(90deg, #00c6ff, #0072ff);
             width: 0;
-            border-radius: 20px;
+            border-radius: 25px;
             transition: width 1s;
         }
 
-        .skills ul li:hover .progress-bar div {
-            width: 80%;
+        .skills ul li:hover .progress-bar-fill {
+            width: 100%;
         }
 
-        /* Project Cards */
-        .project-card {
+        .dark-mode .progress-bar-fill {
+            background: linear-gradient(90deg, #ff5e5e, #ff4e50);
+        }
+
+        /* Project and Blog Cards */
+        .project-card,
+        .blog-card {
             display: inline-block;
             width: calc(33.333% - 20px);
             margin: 10px;
-            padding: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            background-color: #fff;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .project-card:hover,
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card a,
+        .blog-card a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #0072ff;
+            transition: color 0.3s;
+        }
+
+        .project-card a:hover,
+        .blog-card a:hover {
+            color: #0056b3;
+        }
+
+        .project-card .overlay,
+        .blog-card .overlay {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            transition: opacity 0.3s;
+            font-size: 1.2em;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .project-card:hover .overlay,
+        .blog-card:hover .overlay {
+            display: flex;
+            opacity: 1;
+        }
+
+        /* Testimonial Section */
+        .testimonials {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f4f4f4;
+        }
+
+        .testimonial-carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-carousel .testimonial {
+            min-width: 100%;
+            transition: transform 0.5s ease-in-out;
+            padding: 20px;
+            background: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 1.2em;
+            font-style: italic;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Contact Form */
-        .contact-form {
+        .testimonial-carousel .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
             display: flex;
-            flex-direction: column;
-            max-width: 500px;
-            margin: 0 auto;
+            justify-content: space-between;
+            transform: translateY(-50%);
         }
 
-        .contact-form input,
-        .contact-form textarea {
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1em;
-            transition: all 0.3s;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: #0072ff;
-            box-shadow: 0 0 5px rgba(0, 114, 255, 0.5);
-        }
-
-        .contact-form button {
-            padding: 10px 15px;
+        .testimonial-carousel .controls button {
+            background: rgba(0, 0, 0, 0.5);
             border: none;
-            border-radius: 5px;
-            background-color: #333;
             color: white;
+            font-size: 1.5em;
+            padding: 10px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
 
-        .contact-form button:hover {
-            background-color: #555;
+        .testimonial-carousel .controls button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
 
-        /* Dark Mode */
-        .dark-mode {
-            background-color: #1a1a1a;
-            color: #f4f4f4;
+        .dark-mode .testimonial-carousel .testimonial {
+            background: #2e2e2e;
+            color: #ccc;
         }
 
-        .dark-mode header {
-            background-color: #1a1a1a;
-            color: #f4f4f4;
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
         }
 
-        .dark-mode main {
-            background-color: #333;
-            color: #f4f4f4;
+        .contact-form h2 {
+            margin-top: 0;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: #0072ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: #0056b3;
         }
 
         .dark-mode .contact-form input,
         .dark-mode .contact-form textarea {
-            background-color: #444;
-            color: #f4f4f4;
+            background-color: #333;
+            color: #ccc;
+            border-color: #444;
         }
 
-        .dark-mode .progress-bar {
-            background-color: #555;
+        .dark-mode .contact-form input[type="submit"] {
+            background-color: #ff5e5e;
+            color: #fff;
+        }
+
+        .dark-mode .contact-form input[type="submit"]:hover {
+            background-color: #ff4e50;
         }
 
         footer {
-            background-color: #333;
-            color: white;
             text-align: center;
-            padding: 1rem;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
             position: relative;
+            margin-top: 20px;
         }
 
         footer a {
-            color: #f4f4f4;
+            color: #fff;
             text-decoration: none;
             margin: 0 10px;
+            transition: color 0.3s;
         }
 
         footer a:hover {
-            text-decoration: underline;
+            color: #ffdd57;
         }
 
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 50%;
-            padding: 10px;
-            cursor: pointer;
-            display: none;
-        }
-
-        .back-to-top.show {
-            display: block;
+        footer p {
+            margin: 10px 0;
         }
     </style>
 </head>
 
 <body>
-    <header id="navbar">
+    <header>
         <nav>
-            <a href="#about" aria-label="About">About</a>
-            <a href="#skills" aria-label="Skills">Skills</a>
-            <a href="#projects" aria-label="Projects">Projects</a>
-            <a href="#contact" aria-label="Contact">Contact</a>
-            <button aria-label="Toggle dark mode" onclick="toggleDarkMode()">Dark Mode</button>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+            <button id="darkModeToggle">🌙</button>
         </nav>
     </header>
 
-    <main>
+    <main id="home">
         <section class="hero-section">
             <h1>Aditya Kumar Tiwari</h1>
-            <p>Cybersecurity Enthusiast | Web Developer</p>
+            <p>Cybersecurity Enthusiast | Web Developer | Lifelong Learner</p>
         </section>
 
         <section id="about">
             <h2>About Me</h2>
-            <p>Passionate about cybersecurity and web development...</p>
+            <p>I'm Aditya, a passionate cybersecurity expert and web developer with a knack for building secure and scalable web applications. I love solving complex problems and continuously learning new technologies.</p>
         </section>
 
         <section id="skills">
             <h2>Skills</h2>
             <ul>
-                <li>HTML/CSS/JavaScript
+                <li>
+                    <span>HTML & CSS</span>
                     <div class="progress-bar">
-                        <div style="width: 80%;"></div>
+                        <div class="progress-bar-fill" style="width: 90%;"></div>
                     </div>
                 </li>
-                <li>Cybersecurity
+                <li>
+                    <span>JavaScript</span>
                     <div class="progress-bar">
-                        <div style="width: 75%;"></div>
+                        <div class="progress-bar-fill" style="width: 80%;"></div>
                     </div>
                 </li>
-                <li>React/Node.js
+                <li>
+                    <span>Python</span>
                     <div class="progress-bar">
-                        <div style="width: 70%;"></div>
+                        <div class="progress-bar-fill" style="width: 85%;"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>Cybersecurity</span>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill" style="width: 75%;"></div>
                     </div>
                 </li>
             </ul>
@@ -313,98 +458,129 @@
         <section id="projects">
             <h2>Projects</h2>
             <div class="project-card">
-                <h3>Innova E-commerce Platform</h3>
-                <p>An e-commerce platform with innovative features...</p>
-                <a href="#" aria-label="View project details">View Project</a>
+                <h3>Project Title</h3>
+                <p>Description of the project.</p>
+                <a href="#">View Project</a>
             </div>
             <div class="project-card">
-                <h3>Movie Streaming Website</h3>
-                <p>A responsive movie streaming site with rich media content...</p>
-                <a href="#" aria-label="View project details">View Project</a>
+                <h3>Project Title</h3>
+                <p>Description of the project.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Project Title</h3>
+                <p>Description of the project.</p>
+                <a href="#">View Project</a>
+            </div>
+        </section>
+
+        <section id="blog">
+            <h2>Blog</h2>
+            <div class="blog-card">
+                <h3>Blog Post Title</h3>
+                <p>Snippet of the blog post.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="blog-card">
+                <h3>Blog Post Title</h3>
+                <p>Snippet of the blog post.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="blog-card">
+                <h3>Blog Post Title</h3>
+                <p>Snippet of the blog post.</p>
+                <a href="#">Read More</a>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial">
+                    <p>"Aditya is a fantastic developer who knows how to secure applications and create user-friendly experiences. Highly recommended!"</p>
+                    <cite>- Client Name</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"Exceptional work and great communication. Aditya's expertise in cybersecurity is top-notch!"</p>
+                    <cite>- Client Name</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"A pleasure to work with. Aditya's projects are always of the highest quality and delivered on time."</p>
+                    <cite>- Client Name</cite>
+                </div>
+                <div class="controls">
+                    <button id="prevTestimonial">❮</button>
+                    <button id="nextTestimonial">❯</button>
+                </div>
             </div>
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
-            <form class="contact-form" aria-label="Contact form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" aria-label="Your name" required>
+            <form class="contact-form" action="mailto:aditya@example.com" method="post" enctype="text/plain">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" aria-label="Your email address" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" aria-label="Your message" required></textarea>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
 
-                <button type="submit" aria-label="Submit your message">Submit</button>
+                <input type="submit" value="Send Message">
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Aditya Kumar Tiwari. All Rights Reserved.</p>
-        <a href="https://linkedin.com/in/aditya-tiwari" aria-label="LinkedIn">LinkedIn</a>
-        <a href="https://github.com/aditya-tiwari" aria-label="GitHub">GitHub</a>
-        <a href="https://twitter.com/aditya-tiwari" aria-label="Twitter">Twitter</a>
+        <p>&copy; 2024 Aditya Kumar Tiwari. All rights reserved.</p>
+        <p>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/yourprofile" target="_blank">GitHub</a> |
+            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+        </p>
     </footer>
 
-    <button class="back-to-top" aria-label="Back to top">↑</button>
-
     <script>
-        // Toggle dark mode
-        function toggleDarkMode() {
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            const isDarkMode = document.body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', isDarkMode);
+            darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('navbar-scrolled');
+            } else {
+                header.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Testimonial Carousel
+        let currentIndex = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        const totalTestimonials = testimonials.length;
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            testimonials.forEach((testimonial) => {
+                testimonial.style.transform = `translateX(${offset}%)`;
+            });
         }
 
-        // Load dark mode state from localStorage
-        document.addEventListener('DOMContentLoaded', () => {
-            const darkMode = localStorage.getItem('darkMode') === 'true';
-            if (darkMode) {
-                document.body.classList.add('dark-mode');
-            }
+        document.getElementById('prevTestimonial').addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalTestimonials - 1;
+            updateCarousel();
         });
 
-        // Sticky Navbar
-        window.addEventListener('scroll', function () {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('navbar-scrolled');
-            } else {
-                navbar.classList.remove('navbar-scrolled');
-            }
-        });
-
-        // Smooth Scroll for Navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Back to Top Button
-        const backToTopButton = document.querySelector('.back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        document.getElementById('nextTestimonial').addEventListener('click', () => {
+            currentIndex = (currentIndex < totalTestimonials - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
         });
     </script>
-
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </body>
 
 </html>
