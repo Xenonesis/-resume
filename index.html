@@ -515,7 +515,26 @@ footer p {
     height: 100%;
     border: none;
 }
-
+.social-icon {
+        width: 50px;
+        height: 50px;
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .social-icon:hover {
+        transform: scale(1.2);
+        filter: brightness(1.2);
+    }
+    .social-icon:active {
+        animation: rotateIcon 0.5s ease;
+    }
+    @keyframes rotateIcon {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 
 </style>    
 </head>
@@ -528,27 +547,27 @@ footer p {
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#blog">Blog</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#certifications">Certifications</a>
             <a href="#contact">Contact</a>
             <button id="darkModeToggle">🌙</button>
         </nav>
     </header>
-
+    
     <main id="home">
         <section class="hero-section">
             <h1>Aditya</h1>
             <p>Cybersecurity Enthusiast | Web Developer | Lifelong Learner</p>
             <a href="https://www.linkedin.com/in/itisaddy/" target="_blank" class="connect-link">Connect with me on LinkedIn</a>
         </section>
-        
-
+    
         <section id="about">
             <h2>About Me</h2>
             <p>I'm Aditya, a passionate cybersecurity expert and web developer with a knack for building secure and scalable web applications. I love solving complex problems and continuously learning new technologies.</p>
         </section>
-
+    
         <section id="skills">
             <h2>Skills</h2>
-        
             <div class="skill-category">
                 <h3>Advanced</h3>
                 <ul class="skills-list">
@@ -590,7 +609,7 @@ footer p {
                     </li>
                 </ul>
             </div>
-        
+    
             <div class="skill-category">
                 <h3>Intermediate</h3>
                 <ul class="skills-list">
@@ -632,7 +651,7 @@ footer p {
                     </li>
                 </ul>
             </div>
-        
+    
             <div class="skill-category">
                 <h3>Beginner</h3>
                 <ul class="skills-list">
@@ -662,9 +681,8 @@ footer p {
                     </li>
                 </ul>
             </div>
-        
         </section>
-        
+    
         <section id="projects">
             <h2>Projects</h2>
             <div class="project-card">
@@ -683,8 +701,7 @@ footer p {
                 <a href="https://github.com/Xenonesis/Innova.git">View Project</a>
             </div>
         </section>
-        
-
+    
         <section id="blog">
             <h2>Blog</h2>
             <div class="blog-card">
@@ -703,10 +720,117 @@ footer p {
                 <a href="#">Read More</a>
             </div>
         </section>
-
+    
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <div class="achievement-list">
+                <div class="achievement-item">
+                    <h3>Cybersecurity Competition Winner</h3>
+                    <p>1st place in the National Cybersecurity Competition, 2023.</p>
+                </div>
+                <section id="achievements">
+                    <h2>Achievements</h2>
+                    <div class="achievement-list">
+                        <div class="achievement-item">
+                            <h3>University Sports Leader</h3>
+                            <p>Served as the University Sports Leader for the academic year 2023-2024, leading sports activities and organizing events.</p>
+                        </div>
+                        <div class="achievement-item">
+                            <h3>NSS Leader</h3>
+                            <p>Currently serving as the NSS Leader since 2024, coordinating social service activities and community programs.</p>
+                        </div>
+                        <div class="achievement-item">
+                            <h3>Gold Medalist in March Past</h3>
+                            <p>Received gold medals for leading the March Past during Blaze VII-2023 and Blaze VIII-2024 university events.</p>
+                        </div>
+                        <!-- Add more achievements here -->
+                    </div>
+                </section>
+        </section>
+    
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="certification-list">
+                <div class="certification-item">
+                    <h3>Digital Footprint Certification</h3>
+                    <p>Issued by United Latino Students Association. Obtained in August 2024.</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Cisco Cyber Threat Management</h3>
+                    <p>Issued by CISCO. Currently in progress as of July 2024.</p>
+                </div>
+                <div class="certification-item">
+                    <h3>OSForensics Triage Certification</h3>
+                    <p>Issued by OSForensics by PassMark Software. Currently in progress as of July 2024.</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Certified Cisco Ethical Hacker (CEH)</h3>
+                    <p>Issued by CISCO. Currently in progress as of June 2024.</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Cisco EndPoint Security</h3>
+                    <p>Issued by CISCO. Currently in progress as of June 2024.</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Foundations Of Computer Security</h3>
+                    <p>Issued by Google. Currently in progress as of August 2024.</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Technical Support Fundamentals</h3>
+                    <p>Issued by Google. Currently in progress as of August 2024.</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Computer Architecture</h3>
+                    <p>Issued by Great Learning. Currently in progress as of July 2024.</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Recent Advances In Freeform Electronics</h3>
+                    <p>Issued by Yonsei University. Currently in progress as of July 2024.</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Excel For Intermediate Level</h3>
+                    <p>Issued by Great Learning. Currently in progress as of July 2024.</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Introduction To Prompt Engineering For Generative AI</h3>
+                    <p>Issued by LinkedIn. Currently in progress as of July 2024.</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Cybersecurity For Everyone</h3>
+                    <p>Issued by University of Maryland, College Park. Currently in progress as of July 2024.</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Google Technical Support Fundamentals</h3>
+                    <p>Issued by Coursera-Google. Completed in July 2024.</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Cisco Computer Hardware Basics</h3>
+                    <p>Issued by CISCO. Currently in progress as of June 2024.</p>
+                </div>
+                <div class="certification-item">
+                    <h3>MS-Excel Advanced</h3>
+                    <p>Issued by Great Learning. Currently in progress as of June 2024.</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Prompt Engineering For Chat GPT</h3>
+                    <p>Issued by Great Learning. Currently in progress as of June 2024.</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Linux Tutorial</h3>
+                    <p>Issued by Great Learning. Currently in progress as of June 2024.</p>
+                </div>
+            </div>
+        </section>
+    
         <section class="testimonials" id="testimonials">
             <h2>Testimonials</h2>
             <div class="testimonial-carousel">
+                <div class="testimonial">
+                    <p>"Aditya is a stellar student and proficient future technology professional..he has all the qualities to become an influential leader and a professional game changer...
+                        he is actively able to perform the most daunting tasks with enormous ease....as a mentor it is a privilege to impart professional skills to this stupendous future leader and top performer....
+                        11 on 10 to Aditya...keep rocking and kick ass..👍👍👍"</p>
+                    <cite>- Siddhartth Anand(Aditya's Teacher)</cite>
+                </div>
                 <div class="testimonial">
                     <p>"Aditya is a fantastic developer who knows how to secure applications and create user-friendly experiences. Highly recommended!"</p>
                     <cite>- Client Name</cite>
@@ -725,50 +849,48 @@ footer p {
                 </div>
             </div>
         </section>
-
+    
         <section id="contact">
             <h2>Contact</h2>
             <form class="contact-form" action="mailto:itisaddy7@gmail.com" method="post" enctype="text/plain">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
-
+    
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
-
+    
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
-
+    
                 <input type="submit" value="Send Message">
             </form>
         </section>
     </main>
-
-
+    
     <footer>
-        <!-- <img src="logo.png" alt="Innova Logo" style="height 30px;"> -->
-         <!-- LinkedIn Popup -->
-<!-- <div id="linkedinPopup" class="popup linkedin-popup"> -->
-    <!-- <iframe src="<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7229725922021564418" height="1025" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>" height="500" width="400" frameborder="0" allowfullscreen="" title="Embedded post"></iframe> -->
-    <!-- <iframe src="<iframe src="" height="1025" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>" height="500" width="400" frameborder="0" allowfullscreen="" title="Embedded post"></iframe> -->
-<!-- </div> -->
-
         <div id="popup" class="popup">
             <div class="popup-content">
                 <h2>Connect with Me!</h2>
-        <a href="https://www.linkedin.com/in/itisaddy/" target="_blank" class="connect-link">LinkedIn</a>
-        <a href="https://github.com/Xenonesis" target="_blank" class="connect-link">GitHub</a>
-        <a href="https://www.instagram.com/i__aditya7/?utm_source=ig_web_button_share_sheet" target="_blank" class="connect-link">Instagram</a>
-        <button class="close" onclick="closePopup()">Close</button>
-    </div>
-</div>
+                <a href="https://www.linkedin.com/in/itisaddy/" target="_blank" class="connect-link">LinkedIn</a>
+                <a href="https://github.com/Xenonesis" target="_blank" class="connect-link">GitHub</a>
+                <a href="https://www.instagram.com/i__aditya7/?utm_source=ig_web_button_share_sheet" target="_blank" class="connect-link">Instagram</a>
+                <button class="close" onclick="closePopup()">Close</button>
+            </div>
+        </div>
         <div class="social-media-body">
-            <a href="https://www.linkedin.com/in/itisaddy/" target="_blank"><img src="https://img.icons8.com/color/100/000000/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://www.instagram.com/i__aditya7/?utm_source=ig_web_button_share_sheet" target="_blank"><img src="https://img.icons8.com/?size=100&id=32320&format=png&color=000000" alt="Instagram"></a>
-            <a href="https://github.com/Xenonesis" target="_blank"><img src="https://img.icons8.com/?size=100&id=12599&format=png&color=000000" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/itisaddy/" target="_blank">
+                <img src="https://img.icons8.com/color/50/000000/linkedin.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/i__aditya7/?utm_source=ig_web_button_share_sheet" target="_blank">
+                <img src="https://img.icons8.com/?size=50&id=32320&format=png&color=000000" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://github.com/Xenonesis" target="_blank">
+                <img src="https://img.icons8.com/?size=50&id=12599&format=png&color=000000" alt="GitHub" class="social-icon">
+            </a>
         </div>
         <p>© 2024 Aditya. All Rights Reserved.</p>
     </footer>
-
+    
 
 
     <script>
