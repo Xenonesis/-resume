@@ -12,393 +12,512 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Aditya Kumar Tiwari Portfolio</title>
     <style>
-        /* General Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            transition: background-color 0.3s, color 0.3s;
-            scroll-behavior: smooth;
-        }
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    scroll-behavior: smooth;
+}
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: background-color 0.3s;
-        }
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
 
-        header.navbar-scrolled {
-            background-color: #444;
-        }
+header.navbar-scrolled {
+    background-color: #444;
+}
 
-        header nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
 
-        header nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
 
-        header nav a:hover {
-            background-color: #555;
-            transform: scale(1.05);
-        }
+header nav a:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
 
-        header nav button {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 1.5em;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
+header nav button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s;
+}
 
-        header nav button:hover {
-            color: #ffdd57;
-        }
+header nav button:hover {
+    color: #ffdd57;
+}
 
-        .dark-mode header {
-            background-color: #1a1a1a;
-        }
+.dark-mode header {
+    background-color: #1a1a1a;
+}
 
-        .dark-mode header nav a {
-            color: #ccc;
-        }
+.dark-mode header nav a {
+    color: #ccc;
+}
 
-        .dark-mode header nav a:hover {
-            background-color: #444;
-        }
+.dark-mode header nav a:hover {
+    background-color: #444;
+}
 
-        .dark-mode header nav button {
-            color: #ffdd57;
-        }
+.dark-mode header nav button {
+    color: #ffdd57;
+}
 
-        main {
-            margin: 80px 20px 20px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, color 0.3s;
-        }
+main {
+    margin: 80px 20px 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
 
-        main h2 {
-            margin-top: 0;
-            color: #333;
-            position: relative;
-        }
+main h2 {
+    margin-top: 0;
+    color: #333;
+    position: relative;
+    font-size: 2em;
+}
 
-        main h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: #0072ff;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            transition: width 0.3s;
-        }
+main h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #0072ff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    transition: width 0.3s;
+}
 
-        main h2:hover::after {
-            width: 100px;
-        }
+main h2:hover::after {
+    width: 100px;
+}
 
-        /* Typewriter Effect for Hero Section */
-        .hero-section {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            animation: backgroundShift 10s infinite alternate;
-        }
+/* Typewriter Effect for Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    animation: backgroundShift 10s infinite alternate;
+}
 
-        @keyframes backgroundShift {
-            0% {
-                background-position: 0% 50%;
-            }
+@keyframes backgroundShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
 
-            100% {
-                background-position: 100% 50%;
-            }
-        }
+.hero-section h1 {
+    font-size: 3.5em;
+    margin: 0;
+    animation: fadeInUp 1.5s ease-out;
+}
 
-        .hero-section h1 {
-            font-size: 3.5em;
-            margin: 0;
-            animation: fadeInUp 1.5s ease-out;
-        }
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+.hero-section p {
+    font-size: 1.7em;
+    margin-top: 20px;
+    font-weight: 300;
+    animation: fadeInUp 2s ease-out;
+}
 
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+/* Skill Progress Bars */
+.skills ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-        .hero-section p {
-            font-size: 1.7em;
-            margin-top: 20px;
-            font-weight: 300;
-            animation: fadeInUp 2s ease-out;
-        }
+.skills ul li {
+    margin-bottom: 15px;
+    overflow: hidden;
+    font-size: 1.1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        /* Skill Progress Bars */
-        .skills ul {
-            list-style-type: none;
-            padding: 0;
-        }
+.progress-bar {
+    width: 80%;
+    background-color: #ddd;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    flex: 1;
+    margin-left: 15px;
+}
 
-        .skills ul li {
-            margin-bottom: 15px;
-            overflow: hidden;
-            font-size: 1.1em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.progress-bar-fill {
+    height: 20px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    width: 0;
+    border-radius: 25px;
+    transition: width 1s;
+}
 
-        .progress-bar {
-            width: 80%;
-            background-color: #ddd;
-            border-radius: 25px;
-            overflow: hidden;
-            position: relative;
-            flex: 1;
-            margin-left: 15px;
-        }
+.skills ul li:hover .progress-bar-fill {
+    width: 100%;
+}
 
-        .progress-bar-fill {
-            height: 20px;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
-            width: 0;
-            border-radius: 25px;
-            transition: width 1s;
-        }
+.dark-mode .progress-bar-fill {
+    background: linear-gradient(90deg, #ff5e5e, #ff4e50);
+}
 
-        .skills ul li:hover .progress-bar-fill {
-            width: 100%;
-        }
+/* Project and Blog Cards */
+.project-card,
+.blog-card {
+    display: inline-block;
+    width: calc(33.333% - 20px);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    background-color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
 
-        .dark-mode .progress-bar-fill {
-            background: linear-gradient(90deg, #ff5e5e, #ff4e50);
-        }
+.project-card:hover,
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
 
-        /* Project and Blog Cards */
-        .project-card,
-        .blog-card {
-            display: inline-block;
-            width: calc(33.333% - 20px);
-            margin: 10px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
-            background-color: #fff;
-            text-align: center;
-            overflow: hidden;
-        }
+.project-card a,
+.blog-card a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #0072ff;
+    transition: color 0.3s;
+}
 
-        .project-card:hover,
-        .blog-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-        }
+.project-card a:hover,
+.blog-card a:hover {
+    color: #0056b3;
+}
 
-        .project-card a,
-        .blog-card a {
-            display: block;
-            margin-top: 10px;
-            text-decoration: none;
-            color: #0072ff;
-            transition: color 0.3s;
-        }
+.project-card .overlay,
+.blog-card .overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: opacity 0.3s;
+    font-size: 1.2em;
+    padding: 20px;
+    text-align: center;
+}
 
-        .project-card a:hover,
-        .blog-card a:hover {
-            color: #0056b3;
-        }
+.project-card:hover .overlay,
+.blog-card:hover .overlay {
+    display: flex;
+    opacity: 1;
+}
 
-        .project-card .overlay,
-        .blog-card .overlay {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
-            transition: opacity 0.3s;
-            font-size: 1.2em;
-            padding: 20px;
-            text-align: center;
-        }
+/* Testimonial Section */
+.testimonials {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
 
-        .project-card:hover .overlay,
-        .blog-card:hover .overlay {
-            display: flex;
-            opacity: 1;
-        }
+.testimonial-carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
 
-        /* Testimonial Section */
-        .testimonials {
-            text-align: center;
-            padding: 50px 20px;
-            background-color: #f4f4f4;
-        }
+.testimonial-carousel .testimonial {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    font-style: italic;
+}
 
-        .testimonial-carousel {
-            display: flex;
-            overflow: hidden;
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        }
+.testimonial-carousel .controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
 
-        .testimonial-carousel .testimonial {
-            min-width: 100%;
-            transition: transform 0.5s ease-in-out;
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            font-size: 1.2em;
-            font-style: italic;
-        }
+.testimonial-carousel .controls button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-        .testimonial-carousel .controls {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
+.testimonial-carousel .controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
 
-        .testimonial-carousel .controls button {
-            background: rgba(0, 0, 0, 0.5);
-            border: none;
-            color: white;
-            font-size: 1.5em;
-            padding: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+.dark-mode .testimonial-carousel .testimonial {
+    background: #2e2e2e;
+    color: #ccc;
+}
 
-        .testimonial-carousel .controls button:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
 
-        .dark-mode .testimonial-carousel .testimonial {
-            background: #2e2e2e;
-            color: #ccc;
-        }
+.contact-form h2 {
+    margin-top: 0;
+}
 
-        /* Contact Form */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        }
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
 
-        .contact-form h2 {
-            margin-top: 0;
-        }
+.contact-form input[type="submit"] {
+    background-color: #0072ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
 
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1em;
-            box-sizing: border-box;
-        }
+.contact-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
 
-        .contact-form input[type="submit"] {
-            background-color: #0072ff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1em;
-            transition: background-color 0.3s;
-        }
+.dark-mode .contact-form input,
+.dark-mode .contact-form textarea {
+    background-color: #333;
+    color: #ccc;
+    border-color: #444;
+}
 
-        .contact-form input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
+.dark-mode .contact-form input[type="submit"] {
+    background-color: #ff5e5e;
+    color: #fff;
+}
 
-        .dark-mode .contact-form input,
-        .dark-mode .contact-form textarea {
-            background-color: #333;
-            color: #ccc;
-            border-color: #444;
-        }
+.dark-mode .contact-form input[type="submit"]:hover {
+    background-color: #ff4e50;
+}
 
-        .dark-mode .contact-form input[type="submit"] {
-            background-color: #ff5e5e;
-            color: #fff;
-        }
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    margin-top: 20px;
+}
 
-        .dark-mode .contact-form input[type="submit"]:hover {
-            background-color: #ff4e50;
-        }
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: #fff;
-            position: relative;
-            margin-top: 20px;
-        }
+footer a:hover {
+    color: #ffdd57;
+}
 
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
+footer p {
+    margin: 10px 0;
+}
 
-        footer a:hover {
-            color: #ffdd57;
-        }
+/* Connect Link Styles */
+.connect-link {
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #0077b5;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
 
-        footer p {
-            margin: 10px 0;
-        }
-    </style>
+.connect-link:hover {
+    background-color: #005582;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.connect-link:active {
+    background-color: #003d75;
+    transform: scale(1.02);
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translate(-50%, -60%) scale(0.9);
+}
+
+.popup-content {
+    text-align: center;
+    color: #fff;
+}
+
+.popup h2 {
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+.popup button {
+    background-color: #0072ff;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.popup button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.popup button.close {
+    background-color: #ff5e5e;
+}
+
+.popup button.close:hover {
+    background-color: #ff4e50;
+}
+
+.popup.show {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.dark-mode .popup {
+    background: linear-gradient(135deg, #333 0%, #444 100%);
+    color: #ccc;
+}
+
+.dark-mode .popup button {
+    background-color: #ff5e5e;
+}
+
+.dark-mode .popup button:hover {
+    background-color: #ff4e50;
+}
+
+/* LinkedIn Popup Styles */
+.linkedin-popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 500px;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.linkedin-popup iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+</style>    
 </head>
 
 <body>
@@ -416,9 +535,11 @@
 
     <main id="home">
         <section class="hero-section">
-            <h1>Aditya Kumar Tiwari</h1>
+            <h1>Aditya</h1>
             <p>Cybersecurity Enthusiast | Web Developer | Lifelong Learner</p>
+            <a href="https://www.linkedin.com/in/itisaddy/" target="_blank" class="connect-link">Connect with me on LinkedIn</a>
         </section>
+        
 
         <section id="about">
             <h2>About Me</h2>
@@ -625,6 +746,21 @@
 
     <footer>
         <!-- <img src="logo.png" alt="Innova Logo" style="height 30px;"> -->
+         <!-- LinkedIn Popup -->
+<!-- <div id="linkedinPopup" class="popup linkedin-popup"> -->
+    <!-- <iframe src="<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7229725922021564418" height="1025" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>" height="500" width="400" frameborder="0" allowfullscreen="" title="Embedded post"></iframe> -->
+    <!-- <iframe src="<iframe src="" height="1025" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>" height="500" width="400" frameborder="0" allowfullscreen="" title="Embedded post"></iframe> -->
+<!-- </div> -->
+
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <h2>Connect with Me!</h2>
+        <a href="https://www.linkedin.com/in/itisaddy/" target="_blank" class="connect-link">LinkedIn</a>
+        <a href="https://github.com/yourusername" target="_blank" class="connect-link">GitHub</a>
+        <a href="https://instagram.com/yourusername" target="_blank" class="connect-link">Instagram</a>
+        <button class="close" onclick="closePopup()">Close</button>
+    </div>
+</div>
         <div class="social-media-body">
             <a href="https://www.linkedin.com/in/itisaddy/" target="_blank"><img src="https://img.icons8.com/color/100/000000/linkedin.png" alt="LinkedIn"></a>
             <a href="https://www.instagram.com/i__aditya7/?utm_source=ig_web_button_share_sheet" target="_blank"><img src="https://img.icons8.com/?size=100&id=32320&format=png&color=000000" alt="Instagram"></a>
@@ -642,7 +778,7 @@
             document.body.classList.toggle('dark-mode');
             darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
         });
-
+    
         // Sticky Header
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
@@ -652,27 +788,80 @@
                 header.classList.remove('navbar-scrolled');
             }
         });
-
+    
         // Testimonial Carousel
         let currentIndex = 0;
         const testimonials = document.querySelectorAll('.testimonial');
         const totalTestimonials = testimonials.length;
-
+    
         function updateCarousel() {
             const offset = -currentIndex * 100;
             testimonials.forEach((testimonial) => {
                 testimonial.style.transform = `translateX(${offset}%)`;
             });
         }
-
+    
         document.getElementById('prevTestimonial').addEventListener('click', () => {
             currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalTestimonials - 1;
             updateCarousel();
         });
-
+    
         document.getElementById('nextTestimonial').addEventListener('click', () => {
             currentIndex = (currentIndex < totalTestimonials - 1) ? currentIndex + 1 : 0;
             updateCarousel();
+        });
+    
+        // Popup functionality
+        let popupInterval;
+        let linkedinPopupInterval;
+    
+        function showPopup() {
+            const popup = document.getElementById('popup');
+            if (popup) {
+                popup.classList.add('show');
+                clearInterval(popupInterval);
+                popupInterval = setInterval(() => {
+                    popup.classList.add('show');
+                }, 15000); // Show popup every 5 seconds
+            }
+        }
+    
+        function closePopup() {
+            const popup = document.getElementById('popup');
+            if (popup) {
+                popup.classList.remove('show');
+            }
+        }
+    
+        function showLinkedInPopup() {
+            const linkedinPopup = document.getElementById('linkedinPopup');
+            if (linkedinPopup) {
+                linkedinPopup.classList.add('show');
+                clearInterval(linkedinPopupInterval);
+                linkedinPopupInterval = setInterval(() => {
+                    linkedinPopup.classList.add('show');
+                }, 5000); // Show LinkedIn popup every 5 seconds
+            }
+        }
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            // Show popup after 3 seconds
+            setTimeout(showPopup, 3000);
+    
+            // Show LinkedIn popup immediately
+            showLinkedInPopup();
+    
+            // Close popup when clicking outside of it
+            window.addEventListener('click', (event) => {
+                const popup = document.getElementById('popup');
+                const linkedinPopup = document.getElementById('linkedinPopup');
+                if (popup && !popup.contains(event.target) && event.target !== popup) {
+                    closePopup();
+                }
+                if (linkedinPopup && !linkedinPopup.contains(event.target) && event.target !== linkedinPopup) {
+                    linkedinPopup.classList.remove('show');
+                }
+            });
         });
     </script>
 </body>
