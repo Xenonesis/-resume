@@ -654,6 +654,194 @@ footer p {
     }
 }
 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        filter: brightness(1);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        filter: brightness(1.2);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        filter: brightness(1);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: float 10s ease-in-out infinite, pulse 5s ease-in-out infinite;
+}
+
+.profile-image:hover {
+    animation: pulse 1s ease-in-out infinite, float 3s ease-in-out infinite;
+}
+
+@keyframes zoom3D {
+    0% {
+        transform: perspective(1000px) scale(0.8) translateZ(-200px);
+        opacity: 0;
+    }
+    100% {
+        transform: perspective(1000px) scale(1) translateZ(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%) rotateY(90deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes textureShift {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes zoom3D {
+    0% {
+        transform: perspective(1000px) scale(0.8) translateZ(-200px);
+        opacity: 0;
+    }
+    100% {
+        transform: perspective(1000px) scale(1) translateZ(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%) rotateY(90deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes textureShift {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Keyframe Animations */
+
+/* 3D Flip Animation */
+@keyframes flipIn {
+    0% {
+        transform: rotateX(-90deg);
+        opacity: 0;
+    }
+    50% {
+        transform: rotateX(10deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: rotateX(0);
+        opacity: 1;
+    }
+}
+
+/* Glow and Pulse Effect */
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.8), 0 0 10px rgba(0, 255, 255, 0.6), 0 0 15px rgba(0, 255, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(0, 255, 255, 1), 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.8), 0 0 10px rgba(0, 255, 255, 0.6), 0 0 15px rgba(0, 255, 255, 0.4);
+    }
+}
+
+/* Slide-In Animation */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-20px) scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Texture Background Shift Animation */
+@keyframes textureShift {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Video Section Styling */
+.video-section {
+    margin-top: 20px;
+    background: url('your-texture-image.jpg') repeat;
+    background-size: 200% 200%;
+    animation: textureShift 10s linear infinite, slideIn 1s ease-out;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Updated Iframe Styling */
+iframe {
+    width: 70%; /* Increased width to 70% for a wider rectangle */
+    height: 40vh; /* Set height to 40% of the viewport height for a rectangular shape */
+    border: 4px solid rgba(0, 255, 255, 0.7); /* Moderately thick and more opaque border */
+    border-radius: 10px; /* Slight rounding for a sleek look */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.4); /* Enhanced glow effect with a larger shadow */
+    animation: flipIn 1.5s ease-out, glowPulse 3s ease-in-out infinite, zoomIn 1.2s ease-out 1; /* Combined entry and pulse animations */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+}
+
+iframe:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.9), 0 0 40px rgba(0, 255, 255, 0.6); /* Brighter glow on hover */
+}
+
+
 </style>    
 </head>
 
@@ -681,8 +869,24 @@ footer p {
     
         <section id="about">
             <h2>About Me</h2>
-            <p>I'm Aditya, a passionate cybersecurity expert and web developer with a knack for building secure and scalable web applications. I love solving complex problems and continuously learning new technologies.</p>
-        </section>
+            <div class="about-content">
+                <img src="https://media.licdn.com/dms/image/v2/D5635AQFIR7rU5Lp6DQ/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1721414411212?e=1724580000&v=beta&t=fgoqAOuYIwuWppjcy8kCH9LMQykSVSBWYCU_5ljZqiQ" alt="Aditya Kumar Tiwari" class="profile-image">
+                <p>I'm Aditya, a passionate cybersecurity expert and web developer with a knack for building secure and scalable web applications. I love solving complex problems and continuously learning new technologies.</p>
+            </div>
+            <div class="video-section">
+                <h3>Watch My Introduction</h3>
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/2vMH8lITTCE?si=s9wame-5tIaupvmT"
+                    title="Introduction Video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+        
     
         <section id="skills">
             <h2>Skills</h2>
