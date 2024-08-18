@@ -536,6 +536,47 @@ footer p {
         }
     }
 
+    @media only screen and (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav ul li {
+        display: block;
+    }
+
+    main {
+        padding: 1rem;
+    }
+}
+
+/* Medium Devices (tablets, 768px and down) */
+@media only screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1.1rem;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+}
+
+/* Large Devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    main {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+}
+
 </style>    
 </head>
 
@@ -894,6 +935,8 @@ footer p {
 
 
     <script>
+
+        
         // Dark Mode Toggle
         const darkModeToggle = document.getElementById('darkModeToggle');
         darkModeToggle.addEventListener('click', () => {
