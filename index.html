@@ -829,7 +829,7 @@ iframe:hover {
 
 /* Light Mode (default) */
 body {
-    background-color: #f4f4f4;
+    background-color: #fefae0;
     color: #333;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
@@ -843,10 +843,11 @@ header {
 header.navbar-scrolled {
     background-color: #0056b3;
     transform: translateY(-5px);
+    transition: background-color 0.3s ease-in-out;
 }
 
 main {
-    background-color: #f4f4f4;
+    background-color: #fefae0;
     color: #333;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
@@ -856,6 +857,7 @@ main {
     color: #333;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1);
 }
 
 .project-card:hover {
@@ -904,7 +906,7 @@ main {
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-color: #0072ff;
-    box-shadow: 0 0 5px rgba(0, 114, 255, 0.5);
+    box-shadow: 0 0 8px rgba(0, 114, 255, 0.5);
 }
 
 /* Dark Mode */
@@ -922,6 +924,7 @@ main {
 .dark-mode header.navbar-scrolled {
     background-color: #2e2e2e;
     transform: translateY(-5px);
+    transition: background-color 0.3s ease-in-out;
 }
 
 .dark-mode main {
@@ -935,6 +938,7 @@ main {
     color: #ccc;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
 }
 
 .dark-mode .project-card:hover {
@@ -983,7 +987,7 @@ main {
 .dark-mode .contact-form input:focus,
 .dark-mode .contact-form textarea:focus {
     border-color: #ff5e5e;
-    box-shadow: 0 0 5px rgba(255, 94, 94, 0.5);
+    box-shadow: 0 0 8px rgba(255, 94, 94, 0.5);
 }
 
 .dark-mode .contact-form input[type="submit"] {
@@ -995,8 +999,6 @@ main {
     background: linear-gradient(120deg, #ff2e2e, #ff4e50);
     transform: translateY(-2px);
 }
-
-
 
 </style>    
 </head>
@@ -1050,6 +1052,12 @@ main {
                 <h3>Advanced</h3>
                 <ul class="skills-list">
                     <li>
+                        <span class="skill-name">Digital Forensics</span>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 95%;"></div>
+                        </div>
+                    </li>
+                    <li>
                         <span class="skill-name">HTML</span>
                         <div class="progress-bar">
                             <div class="progress-bar-fill" style="width: 95%;"></div>
@@ -1074,7 +1082,7 @@ main {
                         </div>
                     </li>
                     <li>
-                        <span class="skill-name">Firebase</span>
+                        <span class="skill-name">Ethical-Hacking</span>
                         <div class="progress-bar">
                             <div class="progress-bar-fill" style="width: 85%;"></div>
                         </div>
@@ -1140,7 +1148,13 @@ main {
                         </div>
                     </li>
                     <li>
-                        <span class="skill-name">Ethical Hacking</span>
+                        <span class="skill-name">netlify</span>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 60%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="skill-name">Firebase</span>
                         <div class="progress-bar">
                             <div class="progress-bar-fill" style="width: 60%;"></div>
                         </div>
