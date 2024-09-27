@@ -11,6 +11,7 @@
     <meta property="og:url" content="https://adityatiwari.com">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Aditya Kumar Tiwari Portfolio</title>
+     <script src="https://cdn.jsdelivr.net/npm/chatbot.js"></script>
     <style>
     body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -1000,6 +1001,114 @@ main {
     transform: translateY(-2px);
 }
 
+/* Chatbot Styles */
+#botContainer {
+    background-color: #f1f1f1;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 360px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#botChatbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+#botMessages {
+    padding: 15px;
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.message.user {
+    background-color: #0084ff;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+}
+
+.message.bot {
+    background-color: #e5e5ea;
+    color: black;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+}
+
+#userInput {
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 14px;
+    border-top: 1px solid #ccc;
+    outline: none;
+}
+
+#sendMessage {
+    background-color: #0084ff;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#sendMessage:hover {
+    background-color: #005bb5;
+}
+
+/* Dark Mode Chatbot Styles */
+body.dark-mode #botContainer {
+    background-color: #333;
+    color: #ccc;
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode #botMessages {
+    background-color: #444;
+}
+
+body.dark-mode .message.user {
+    background-color: #005bb5;
+    color: white;
+}
+
+body.dark-mode .message.bot {
+    background-color: #555;
+    color: #ddd;
+}
+
+body.dark-mode #userInput {
+    background-color: #555;
+    color: white;
+    border-top: 1px solid #888;
+}
+
+body.dark-mode #sendMessage {
+    background-color: #005bb5;
+}
+
+body.dark-mode #sendMessage:hover {
+    background-color: #003d7a;
+}
+
 </style>    
 </head>
 
@@ -1351,6 +1460,17 @@ main {
                 <input type="submit" value="Send Message">
             </form>
         </section>
+
+        <!-- Bot Container -->
+<div id="botContainer" class="bot-container">
+    <div id="botChatbox">
+        <div id="botMessages">
+            <div class="message bot">Hello! 👋 How can I assist you today?</div>
+        </div>
+        <input type="text" id="userInput" placeholder="Ask me anything..." />
+        <button id="sendMessage">Send</button>
+    </div>
+</div>
     </main>
     
     <footer>
@@ -1381,98 +1501,242 @@ main {
 
     <script>
 
-        
-        // Dark Mode Toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-        });
-    
-        // Sticky Header
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('navbar-scrolled');
-            } else {
-                header.classList.remove('navbar-scrolled');
+// Initialize previous conversations
+const previousConversations = JSON.parse(localStorage.getItem('chatbot_conversations')) || [];
+const botMessagesContainer = document.getElementById('botMessages');
+
+// Load previous messages from localStorage
+previousConversations.forEach(conversation => {
+    addMessage(conversation.input, 'user');
+    addMessage(conversation.response, 'bot');
+});
+
+// State to manage if the bot is waiting for user input for learning
+let isLearningMode = false;
+
+// Attach event listener to send button
+document.getElementById('sendMessage').addEventListener('click', function() {
+    const userInput = document.getElementById('userInput').value;
+
+    if (userInput.trim() === "" || isLearningMode) return; // Prevent empty input or input when in learning mode
+
+    addMessage(userInput, 'user');
+    document.getElementById('userInput').value = '';
+
+    // Store user input in local storage for learning
+    previousConversations.push({ input: userInput });
+    localStorage.setItem('chatbot_conversations', JSON.stringify(previousConversations));
+
+    // Simulate bot typing animation
+    setTimeout(function() {
+        addMessage('Typing...', 'bot typing');
+
+        // Simulate response time
+        setTimeout(function() {
+            const typingMessage = document.querySelector('.typing');
+            if (typingMessage) {
+                typingMessage.remove(); // Check if the typing message exists before removing it
             }
-        });
-    
-        // Testimonial Carousel
-        let currentIndex = 0;
-        const testimonials = document.querySelectorAll('.testimonial');
-        const totalTestimonials = testimonials.length;
-    
-        function updateCarousel() {
-            const offset = -currentIndex * 100;
-            testimonials.forEach((testimonial) => {
-                testimonial.style.transform = `translateX(${offset}%)`;
-            });
+            const botResponse = getBotResponse(userInput);
+            addMessage(botResponse, 'bot');
+        }, 1000);
+    }, 500);
+});
+
+function addMessage(message, type) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${type}`;
+    messageDiv.innerText = message;
+    botMessagesContainer.appendChild(messageDiv);
+    botMessagesContainer.scrollTop = botMessagesContainer.scrollHeight; // Scroll to the bottom
+}
+
+function getBotResponse(input) {
+    const lowerInput = input.toLowerCase();
+
+    // Check if a similar question has been asked before
+    const previousResponse = checkPreviousConversations(lowerInput);
+    if (previousResponse) {
+        return previousResponse; // Return a learned response
+    }
+
+    // Expanded keyword-based responses with emojis
+    const responses = {
+        hello: 'Hi there! 😊 How can I assist you today?',
+        hi: 'Hello! 👋 What’s on your mind?',
+        happy: 'That’s great! 😄 What’s making you happy?',
+        sad: 'I’m sorry to hear that. 😢 If you’d like to talk, I’m here for you.',
+        skills: 'Here are some of my skills: 💻 Web Development, Cybersecurity, Ethical Hacking, and Data Analysis.',
+        projects: 'Check out my projects on GitHub: 👨‍💻 https://github.com/Xenonesis. I’d love your feedback!',
+        contact: 'Feel free to email me at: ✉️ ffjawed@gmail.com. I look forward to hearing from you!',
+        thank: 'You’re welcome! 😊 I’m glad to help!',
+        thanks: 'No problem! Happy to assist! 🙌',
+        help: 'I’m here to assist! What do you need help with? 🤔',
+        bye: 'Goodbye! 👋 Have a great day!',
+        goodbye: 'See you later! 🌟',
+        weather: 'I can’t check the weather, but you can look it up online! ☀️🌧️',
+        joke: 'Why don’t scientists trust atoms? Because they make up everything! 😄',
+        love: 'Love is a beautiful thing! 💖 What about it?',
+        work: 'What do you do for work? 🤔',
+        favorite: 'I love chatting with you! What’s your favorite topic? 🌈',
+        movie: 'I enjoy movies! What’s your favorite one? 🎬',
+        music: 'Music is great! What’s your favorite song or artist? 🎵'
+    };
+
+    // Check for responses in the dictionary
+    for (let key in responses) {
+        if (lowerInput.includes(key)) {
+            return responses[key];
         }
-    
-        document.getElementById('prevTestimonial').addEventListener('click', () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalTestimonials - 1;
-            updateCarousel();
-        });
-    
-        document.getElementById('nextTestimonial').addEventListener('click', () => {
-            currentIndex = (currentIndex < totalTestimonials - 1) ? currentIndex + 1 : 0;
-            updateCarousel();
-        });
-    
-        // Popup functionality
-        let popupInterval;
-        let linkedinPopupInterval;
-    
-        function showPopup() {
-            const popup = document.getElementById('popup');
-            if (popup) {
-                popup.classList.add('show');
-                clearInterval(popupInterval);
-                popupInterval = setInterval(() => {
-                    popup.classList.add('show');
-                }, 15000); // Show popup every 5 seconds
-            }
+    }
+
+    // If nothing matches, return a request for learning and learn from the user's response
+    return learnFromUser(input);
+}
+
+function checkPreviousConversations(input) {
+    for (let conversation of previousConversations) {
+        if (conversation.input.toLowerCase() === input) {
+            return conversation.response; // Return the stored response
         }
+    }
+    return null;
+}
+
+function learnFromUser(input) {
+    // Ask user for the correct response
+    const botResponse = `I don't know the answer to "${input}" yet. What should I say? 😁`;
+
+    // Show the bot's question to the user
+    addMessage(botResponse, 'bot');
     
-        function closePopup() {
-            const popup = document.getElementById('popup');
-            if (popup) {
-                popup.classList.remove('show');
-            }
+    // Set learning mode to true
+    isLearningMode = true;
+
+    // Wait for the user's correct response
+    const userResponseHandler = (event) => {
+        if (event.key === 'Enter') {
+            const userCorrectResponse = event.target.value;
+            addMessage(userCorrectResponse, 'user');
+            event.target.value = ''; // Clear input field
+
+            // Store the learned response
+            previousConversations.push({ input: input, response: userCorrectResponse });
+            localStorage.setItem('chatbot_conversations', JSON.stringify(previousConversations));
+
+            // Thank user for teaching
+            addMessage(`Thanks! I'll remember that: "${userCorrectResponse}" 👍`, 'bot');
+
+            // Remove event listener after getting the response
+            document.removeEventListener('keydown', userResponseHandler);
+            isLearningMode = false; // Reset learning mode
         }
-    
-        function showLinkedInPopup() {
-            const linkedinPopup = document.getElementById('linkedinPopup');
-            if (linkedinPopup) {
-                linkedinPopup.classList.add('show');
-                clearInterval(linkedinPopupInterval);
-                linkedinPopupInterval = setInterval(() => {
-                    linkedinPopup.classList.add('show');
-                }, 5000); // Show LinkedIn popup every 5 seconds
-            }
+    };
+
+    // Attach event listener for user's response
+    document.addEventListener('keydown', userResponseHandler);
+
+    return ''; // Return an empty string to avoid duplicate messages
+}
+
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById('darkModeToggle');
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+});
+
+// Sticky Header
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('navbar-scrolled');
+    } else {
+        header.classList.remove('navbar-scrolled');
+    }
+});
+
+// Testimonial Carousel
+let currentIndex = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+const totalTestimonials = testimonials.length;
+
+function updateCarousel() {
+    const offset = -currentIndex * 100;
+    testimonials.forEach((testimonial) => {
+        testimonial.style.transform = `translateX(${offset}%)`;
+    });
+}
+
+document.getElementById('prevTestimonial').addEventListener('click', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalTestimonials - 1;
+    updateCarousel();
+});
+
+document.getElementById('nextTestimonial').addEventListener('click', () => {
+    currentIndex = (currentIndex < totalTestimonials - 1) ? currentIndex + 1 : 0;
+    updateCarousel();
+});
+
+// Popup functionality
+let popupInterval;
+let linkedinPopupInterval;
+
+function showPopup() {
+    const popup = document.getElementById('popup');
+    if (popup) {
+        popup.classList.add('show');
+        clearInterval(popupInterval);
+        popupInterval = setInterval(() => {
+            popup.classList.add('show');
+        }, 25000); // Show popup every 25 seconds
+    }
+}
+
+function closePopup() {
+    const popup = document.getElementById('popup');
+    if (popup) {
+        popup.classList.remove('show');
+    }
+}
+
+function showLinkedInPopup() {
+    const linkedinPopup = document.getElementById('linkedinPopup');
+    if (linkedinPopup) {
+        linkedinPopup.classList.add('show');
+        clearInterval(linkedinPopupInterval);
+        linkedinPopupInterval = setInterval(() => {
+            linkedinPopup.classList.add('show');
+        }, 5000); // Show LinkedIn popup every 5 seconds
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Show previous messages from local storage on load
+    previousConversations.forEach(conversation => {
+        addMessage(conversation.input, 'user');
+        addMessage(conversation.response, 'bot');
+    });
+
+    // Show popup after 3 seconds
+    setTimeout(showPopup, 3000);
+
+    // Show LinkedIn popup immediately
+    showLinkedInPopup();
+
+    // Close popup when clicking outside of it
+    window.addEventListener('click', (event) => {
+        const popup = document.getElementById('popup');
+        const linkedinPopup = document.getElementById('linkedinPopup');
+        if (popup && !popup.contains(event.target) && event.target !== popup) {
+            closePopup();
         }
-    
-        document.addEventListener('DOMContentLoaded', () => {
-            // Show popup after 3 seconds
-            setTimeout(showPopup, 3000);
-    
-            // Show LinkedIn popup immediately
-            showLinkedInPopup();
-    
-            // Close popup when clicking outside of it
-            window.addEventListener('click', (event) => {
-                const popup = document.getElementById('popup');
-                const linkedinPopup = document.getElementById('linkedinPopup');
-                if (popup && !popup.contains(event.target) && event.target !== popup) {
-                    closePopup();
-                }
-                if (linkedinPopup && !linkedinPopup.contains(event.target) && event.target !== linkedinPopup) {
-                    linkedinPopup.classList.remove('show');
-                }
-            });
-        });
+        if (linkedinPopup && !linkedinPopup.contains(event.target) && event.target !== linkedinPopup) {
+            linkedinPopup.classList.remove('show');
+        }
+    });
+});
+
     </script>
 </body>
 
