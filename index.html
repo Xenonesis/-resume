@@ -1014,6 +1014,33 @@ main {
     bottom: 20px;
     right: 20px;
     z-index: 1000;
+    transition: all 0.3s ease;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+#closeButton {
+    background: transparent;
+    border: none;
+    color: #333;
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#closeButton:hover {
+    color: red;
 }
 
 #botChatbox {
@@ -1028,6 +1055,16 @@ main {
     flex-grow: 1;
     overflow-y: auto;
     max-height: 500px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .message {
@@ -1036,6 +1073,11 @@ main {
     border-radius: 10px;
     max-width: 70%;
     word-wrap: break-word;
+    transition: transform 0.2s;
+}
+
+.message:hover {
+    transform: scale(1.02);
 }
 
 .message.user {
@@ -1074,7 +1116,7 @@ main {
     background-color: #005bb5;
 }
 
-/* Dark Mode Chatbot Styles */
+/* Dark Mode Styles */
 body.dark-mode #botContainer {
     background-color: #333;
     color: #ccc;
@@ -1107,6 +1149,40 @@ body.dark-mode #sendMessage {
 
 body.dark-mode #sendMessage:hover {
     background-color: #003d7a;
+}
+
+/* Responsive Styles */
+@media (max-width: 400px) {
+    #botContainer {
+        width: 90%;
+        right: 5%;
+    }
+
+    #botMessages {
+        padding: 10px;
+    }
+
+    #userInput,
+    #sendMessage {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    #closeButton {
+        font-size: 16px;
+    }
+}
+
+/* Side Icon Styles */
+.side-icon {
+    position: absolute;
+    left: 10px; /* Adjust position */
+    top: 10px; /* Adjust position */
+}
+
+.side-icon img {
+    width: 40px; /* Set desired width */
+    height: auto; /* Maintain aspect ratio */
 }
 
 </style>    
@@ -1461,15 +1537,22 @@ body.dark-mode #sendMessage:hover {
             </form>
         </section>
 
-        <!-- Bot Container -->
+      <!-- Bot Container -->
 <div id="botContainer" class="bot-container">
     <div id="botChatbox">
+        <button id="closeButton" onclick="document.getElementById('botContainer').style.display='none';">✖</button>
+        <div class="side-icon">
+            <img src="bot.icon.jpg" alt="Bot Icon" />
+        </div>
         <div id="botMessages">
             <div class="message bot">Hello! 👋 How can I assist you today?</div>
         </div>
         <input type="text" id="userInput" placeholder="Ask me anything..." />
         <button id="sendMessage">Send</button>
     </div>
+</div>
+
+
 </div>
     </main>
     
