@@ -12,6 +12,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Aditya Kumar Tiwari Portfolio</title>
      <script src="https://cdn.jsdelivr.net/npm/chatbot.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
     body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -367,17 +368,37 @@ footer {
     color: #fff;
     position: relative;
     margin-top: 20px;
+    transition: background-color 0.3s; /* Smooth transition for background color */
 }
 
-footer a {
-    color: #fff;
-    text-decoration: none;
+footer:hover {
+    background-color: #222; /* Darker shade on hover */
+}
+
+.social-media {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.social-link {
+    display: inline-block;
     margin: 0 10px;
+    font-size: 20px;
+    color: #fff;
     transition: color 0.3s;
 }
 
-footer a:hover {
+.social-link:hover {
     color: #ffdd57;
+    transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+.social-link i {
+    transition: transform 0.3s;
+}
+
+.social-link i:hover {
+    transform: scale(1.1); /* Scale up on hover */
 }
 
 footer p {
@@ -1213,7 +1234,7 @@ body.dark-mode #sendMessage:hover {
         <section id="about">
             <h2>About Me</h2>
             <div class="about-content">
-                <img src="https://media.licdn.com/dms/image/v2/D5635AQFIR7rU5Lp6DQ/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1721414411212?e=1724580000&v=beta&t=fgoqAOuYIwuWppjcy8kCH9LMQykSVSBWYCU_5ljZqiQ" alt="Aditya Kumar Tiwari" class="profile-image">
+                <img src="https://media.licdn.com/dms/image/v2/D5635AQFIR7rU5Lp6DQ/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1721414411212?e=1728068400&v=beta&t=sMGcMOV9UFVHcPRzlToth9UiZhygvGosb7kG0N545JI" alt="Aditya Kumar Tiwari" class="profile-image">
                 <p>I'm Aditya, a passionate cybersecurity expert and web developer with a knack for building secure and scalable web applications. I love solving complex problems and continuously learning new technologies.</p>
             </div>
             <div class="video-section">
@@ -1566,19 +1587,20 @@ body.dark-mode #sendMessage:hover {
                 <button class="close" onclick="closePopup()">Close</button>
             </div>
         </div>
-        <div class="social-media-body">
-            <a href="https://www.linkedin.com/in/itisaddy/" target="_blank">
-                <img src="https://img.icons8.com/color/50/000000/linkedin.png" alt="LinkedIn" class="social-icon">
-            </a>
-            <a href="https://www.instagram.com/i__aditya7/?utm_source=ig_web_button_share_sheet" target="_blank">
-                <img src="https://img.icons8.com/?size=50&id=32320&format=png&color=000000" alt="Instagram" class="social-icon">
-            </a>
-            <a href="https://github.com/Xenonesis" target="_blank">
-                <img src="https://img.icons8.com/?size=50&id=12599&format=png&color=000000" alt="GitHub" class="social-icon">
-            </a>
-        </div>
-        <p>© 2024 Aditya. All Rights Reserved.</p>
-    </footer>
+        <footer>
+    <div class="social-media">
+        <a href="https://www.linkedin.com/in/itisaddy/" target="_blank" class="social-link">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com/i__aditya7/?utm_source=ig_web_button_share_sheet" target="_blank" class="social-link">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://github.com/Xenonesis" target="_blank" class="social-link">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+    <p>© 2024 Aditya. All Rights Reserved.</p>
+</footer>
     
 
 
