@@ -33,7 +33,7 @@ This is a simple and elegant portfolio website designed to display my skills, ac
 
 ## Live Demo
 
-You can view the live demo of the website [here](https://your-website-url.com).
+You can view the live demo of the website [here](https://itisaddy.netlify.app/).
 
 ## Technologies Used
 
@@ -54,7 +54,7 @@ You only need a web browser to view the website locally.
 
 1. Clone the repo:
    
-   git clone https://github.com/your-username/portfolio-website.git
+   git clone https://github.com/Xenonesis/-resume?tab=readme-ov-file
 
 2. Open index.html in your browser to view the website.
 
