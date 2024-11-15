@@ -1008,9 +1008,9 @@ main {
 
 /* Chatbot Container Styles */
 #botContainer {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
     width: 400px;
     height: 600px;
     display: flex;
@@ -1020,12 +1020,13 @@ main {
     right: 20px;
     z-index: 1000;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    animation: slideIn 0.5s ease;
+    animation: slideIn 0.5s ease forwards;
+    opacity: 0;
 }
 
 @keyframes slideIn {
     from {
-        transform: translateY(100%);
+        transform: translateY(20%);
         opacity: 0;
     }
     to {
@@ -1038,28 +1039,31 @@ main {
     background: none;
     border: none;
     color: #888;
-    font-size: 20px;
+    font-size: 24px;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 #closeButton:hover {
-    color: #ff5a5a;
+    color: #ff4b4b;
 }
 
 #botChatbox {
     display: flex;
     flex-direction: column;
     height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
 }
 
 #botMessages {
-    padding: 20px;
+    padding: 16px;
     flex-grow: 1;
     overflow-y: auto;
+    background: linear-gradient(180deg, #f5f5f5 0%, #ffffff 100%);
     animation: fadeIn 0.4s ease;
 }
 
@@ -1076,13 +1080,9 @@ main {
     margin-bottom: 12px;
     padding: 12px 16px;
     border-radius: 12px;
-    max-width: 75%;
+    max-width: 80%;
     word-wrap: break-word;
-    transition: transform 0.2s ease;
-}
-
-.message:hover {
-    transform: scale(1.03);
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 .message.user {
@@ -1092,32 +1092,44 @@ main {
     border-bottom-right-radius: 0;
 }
 
+.message.user:hover {
+    background-color: #005bb5;
+}
+
 .message.bot {
-    background-color: #e8e8ea;
+    background-color: #f0f0f5;
     color: #333;
     align-self: flex-start;
     border-bottom-left-radius: 0;
 }
 
+.message.bot:hover {
+    background-color: #e0e0e5;
+}
+
 /* Input and Button Styles */
 .input-container {
     display: flex;
+    align-items: center;
     border-top: 1px solid #ddd;
     padding: 8px;
+    background-color: #ffffff;
 }
 
 #userInput {
     flex: 1;
     border: none;
     padding: 12px;
-    font-size: 15px;
-    border-radius: 8px 0 0 8px;
+    font-size: 16px;
+    border-radius: 8px;
     outline: none;
-    transition: all 0.2s ease;
+    background-color: #f9f9f9;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 #userInput:focus {
     background-color: #f0f0f0;
+    box-shadow: 0 0 8px rgba(0, 120, 255, 0.2);
 }
 
 #sendMessage {
@@ -1125,30 +1137,32 @@ main {
     color: white;
     border: none;
     padding: 12px;
-    font-size: 15px;
-    border-radius: 0 8px 8px 0;
+    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 8px;
 }
 
 #sendMessage:hover {
     background-color: #005bb5;
+    transform: translateY(-2px);
 }
 
 /* Dark Mode Styles */
 body.dark-mode #botContainer {
-    background-color: #2c2c2c;
+    background-color: #2b2b2b;
     color: #ddd;
-    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 body.dark-mode #botMessages {
-    background-color: #383838;
+    background-color: #333;
 }
 
 body.dark-mode .message.user {
     background-color: #005bb5;
-    color: white;
+    color: #fff;
 }
 
 body.dark-mode .message.bot {
@@ -1158,7 +1172,7 @@ body.dark-mode .message.bot {
 
 body.dark-mode #userInput {
     background-color: #444;
-    color: white;
+    color: #eee;
 }
 
 body.dark-mode #sendMessage {
@@ -1170,10 +1184,10 @@ body.dark-mode #sendMessage:hover {
 }
 
 /* Responsive Styles */
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     #botContainer {
-        width: 95%;
-        right: 2.5%;
+        width: 90%;
+        right: 5%;
         bottom: 15px;
     }
 
@@ -1195,11 +1209,19 @@ body.dark-mode #sendMessage:hover {
     top: 20px;
     border-radius: 50%;
     overflow: hidden;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.side-icon:hover {
+    transform: scale(1.1);
 }
 
 .side-icon img {
     width: 100%;
     height: auto;
 }
+
