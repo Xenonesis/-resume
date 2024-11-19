@@ -17,14 +17,27 @@ if (darkModeToggle) {
 // Sticky Header on Scroll
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
-    if (header) {
-        if (window.scrollY > 50) {
-            header.classList.add('navbar-scrolled');
-        } else {
-            header.classList.remove('navbar-scrolled');
-        }
+    if (window.scrollY > 50) {
+        header.classList.add('navbar-scrolled');
+    } else {
+        header.classList.remove('navbar-scrolled');
     }
 });
+
+// Skills Progress Bar Animation
+const skillSections = document.querySelectorAll('.skill-category');
+const skillObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const progressBars = entry.target.querySelectorAll('.progress-bar-fill');
+            progressBars.forEach(bar => {
+                bar.style.width = bar.getAttribute('style').split(':')[1].trim();
+            });
+        }
+    });
+}, { threshold: 0.5 });
+
+skillSections.forEach(section => skillObserver.observe(section));
 
 // Testimonial Carousel
 let currentIndex = 0;
@@ -32,9 +45,8 @@ const testimonials = document.querySelectorAll('.testimonial');
 const totalTestimonials = testimonials.length;
 
 function updateCarousel() {
-    const offset = -currentIndex * 100;
-    testimonials.forEach((testimonial) => {
-        testimonial.style.transform = `translateX(${offset}%)`;
+    testimonials.forEach((testimonial, index) => {
+        testimonial.style.transform = `translateX(${100 * (index - currentIndex)}%)`;
     });
 }
 
@@ -48,20 +60,48 @@ document.getElementById('nextTestimonial')?.addEventListener('click', () => {
     updateCarousel();
 });
 
-// Popups with Auto-Display and Close Functionality
-let popupInterval;
-let linkedinPopupInterval;
+// Scroll-Based Fade-In Animation
+const fadeInElements = document.querySelectorAll('.fade-in');
+const fadeInObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.3 });
 
+fadeInElements.forEach(element => fadeInObserver.observe(element));
+
+// Contact Form Animation
+const contactSection = document.getElementById('contact');
+const contactObserver = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+        contactSection.classList.add('visible');
+    }
+}, { threshold: 0.5 });
+
+contactObserver.observe(contactSection);
+
+// Pop-up Animation
 function showPopup() {
     const popup = document.getElementById('popup');
     if (popup) {
         popup.classList.add('show');
-        clearInterval(popupInterval);
-        popupInterval = setInterval(() => {
-            popup.classList.add('show');
-        }, 25000); // Show popup every 25 seconds
+        setTimeout(() => {
+            popup.classList.remove('show');
+        }, 10000); // Popup stays for 10 seconds
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(showPopup, 3000); // Show popup after 3 seconds
+});
+
+// Close pop-ups when clicking outside of them
+window.addEventListener('click', (event) => {
+    const popup = document.getElementById('popup');
+    if (popup && !popup.contains(event.target)) closePopup();
+});
 
 function closePopup() {
     const popup = document.getElementById('popup');
@@ -70,29 +110,45 @@ function closePopup() {
     }
 }
 
-function showLinkedInPopup() {
-    const linkedinPopup = document.getElementById('linkedinPopup');
-    if (linkedinPopup) {
-        linkedinPopup.classList.add('show');
-        clearInterval(linkedinPopupInterval);
-        linkedinPopupInterval = setInterval(() => {
-            linkedinPopup.classList.add('show');
-        }, 5000); // Show LinkedIn popup every 5 seconds
+// Bot Chatbox Functionality
+const botContainer = document.getElementById('botContainer');
+const botMessages = document.getElementById('botMessages');
+const userInput = document.getElementById('userInput');
+const sendMessageButton = document.getElementById('sendMessage');
+
+sendMessageButton?.addEventListener('click', sendMessage);
+userInput?.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        sendMessage();
     }
+});
+
+function sendMessage() {
+    const message = userInput.value.trim();
+    if (message === '') return;
+
+    const userMessage = document.createElement('div');
+    userMessage.classList.add('message', 'user');
+    userMessage.textContent = message;
+    botMessages.appendChild(userMessage);
+
+    setTimeout(() => {
+        const botReply = document.createElement('div');
+        botReply.classList.add('message', 'bot');
+        botReply.textContent = generateBotReply(message);
+        botMessages.appendChild(botReply);
+        botMessages.scrollTop = botMessages.scrollHeight;
+    }, 500);
+
+    userInput.value = '';
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(showPopup, 3000); // Show popup after 3 seconds
-    showLinkedInPopup();
-
-    // Close popups when clicking outside of them
-    window.addEventListener('click', (event) => {
-        const popup = document.getElementById('popup');
-        const linkedinPopup = document.getElementById('linkedinPopup');
-
-        if (popup && !popup.contains(event.target)) closePopup();
-        if (linkedinPopup && !linkedinPopup.contains(event.target)) {
-            linkedinPopup.classList.remove('show');
-        }
-    });
-});
+function generateBotReply(userMessage) {
+    const replies = [
+        "Thank you for reaching out! How can I assist you today?",
+        "I'm here to help with any questions you have.",
+        "Could you please provide more details?",
+        "Let's get started! What would you like to discuss?"
+    ];
+    return replies[Math.floor(Math.random() * replies.length)];
+}
