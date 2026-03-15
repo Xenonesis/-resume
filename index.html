@@ -4,22 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Aditya Kumar Tiwari, a cybersecurity enthusiast, web developer, and lifelong learner.">
+    <meta name="description" content="Portfolio of Aditya Kumar Tiwari - Cybersecurity Enthusiast, Web Developer, and Lifelong Learner. View projects, skills, certifications, and achievements.">
+    <meta name="keywords" content="Aditya Kumar Tiwari, cybersecurity, web developer, portfolio, ethical hacking, digital forensics, HTML, CSS, JavaScript, Python">
+    <meta name="author" content="Aditya Kumar Tiwari">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#C75B39">
+    
+    <!-- Open Graph -->
     <meta property="og:title" content="Aditya Kumar Tiwari Portfolio">
-    <meta property="og:description" content="Portfolio of Aditya Kumar Tiwari, showcasing skills in cybersecurity, web development, and projects.">
-    <meta property="og:image" content="link_to_image.jpg" alt="Portfolio Image">
+    <meta property="og:description" content="Cybersecurity Enthusiast | Web Developer | Lifelong Learner">
+    <meta property="og:image" content="https://adityatiwari.com/1.png">
     <meta property="og:url" content="https://adityatiwari.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Aditya Kumar Tiwari">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aditya Kumar Tiwari Portfolio">
+    <meta name="twitter:description" content="Cybersecurity Enthusiast | Web Developer | Lifelong Learner">
+    <meta name="twitter:image" content="https://adityatiwari.com/1.png">
+    
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://adityatiwari.com">
     <title>Aditya Kumar Tiwari Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer-when-downgrade">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Aditya Kumar Tiwari",
+        "url": "https://adityatiwari.com",
+        "jobTitle": "Cybersecurity Enthusiast | Web Developer",
+        "description": "Portfolio of Aditya Kumar Tiwari, a cybersecurity enthusiast, web developer, and lifelong learner.",
+        "sameAs": [
+            "https://www.linkedin.com/in/itisaddy/",
+            "https://github.com/Xenonesis",
+            "https://www.instagram.com/i__aditya7/"
+        ],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "JhaMobi Technologies Pvt. Ltd."
+        },
+        "knowsAbout": ["Cybersecurity", "Web Development", "Ethical Hacking", "Digital Forensics", "HTML", "CSS", "JavaScript", "Python"]
+    }
+    </script>
 </head>
 
 <body>
-    <header>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header role="banner">
         <div class="header-inner">
-            <a href="#home" class="logo">AT</a>
-            <nav>
+            <a href="#home" class="logo" aria-label="Aditya Kumar Tiwari - Home">AT</a>
+            <nav role="navigation" aria-label="Main navigation">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
@@ -30,36 +77,37 @@
                 <a href="#certifications">Certifications</a>
                 <a href="#contact">Contact</a>
             </nav>
-            <button id="darkModeToggle" aria-label="Toggle dark mode">
-                <span>◐</span>
+            <button id="darkModeToggle" aria-label="Toggle dark mode" type="button">
+                <span aria-hidden="true">◐</span>
             </button>
         </div>
     </header>
 
-    <main>
-        <section id="home" class="hero-section">
+    <main id="main-content" role="main">
+        <section id="home" class="hero-section" aria-labelledby="hero-title">
             <div class="hero-content">
-                <h1>Aditya <span>Kumar</span> Tiwari</h1>
+                <h1 id="hero-title">Aditya <span>Kumar</span> Tiwari</h1>
                 <p>Cybersecurity Enthusiast | Web Developer | Lifelong Learner</p>
-                <a href="https://www.linkedin.com/in/itisaddy/" target="_blank" class="hero-cta">
+                <a href="https://www.linkedin.com/in/itisaddy/" target="_blank" rel="noopener noreferrer" class="hero-cta" aria-label="Connect with Aditya on LinkedIn (opens in new tab)">
                     Connect with Me
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
             </div>
         </section>
         
-        <section id="about">
-            <h2 class="section-title">About Me</h2>
+        <section id="about" aria-labelledby="about-title">
+            <h2 class="section-title" id="about-title">About Me</h2>
             <div class="about-grid">
                 <div class="about-image-wrapper">
-                    <img src="1.png" alt="Aditya Kumar Tiwari" class="about-image">
+                    <img src="1.png" alt="Aditya Kumar Tiwari - Portrait" class="about-image" loading="lazy" width="350" height="467">
                 </div>
                 <div class="about-text">
                     <p>I'm Aditya, a passionate cybersecurity expert and web developer with a knack for building secure and scalable web applications. I love solving complex problems and continuously learning new technologies.</p>
                     <div class="video-wrapper">
                         <iframe
                             src="https://www.youtube.com/embed/2vMH8lITTCE?si=s9wame-5tIaupvmT"
-                            title="Introduction Video"
+                            title="Aditya Kumar Tiwari - Introduction Video"
+                            loading="lazy"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
                         </iframe>
@@ -68,8 +116,8 @@
             </div>
         </section>
 
-        <section id="skills">
-            <h2 class="section-title">Skills</h2>
+        <section id="skills" aria-labelledby="skills-title">
+            <h2 class="section-title" id="skills-title">Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Advanced</h3>
@@ -247,8 +295,8 @@
             </div>
         </section>
     
-        <section id="Experience">
-            <h2 class="section-title">Professional Experience</h2>
+        <section id="Experience" aria-labelledby="experience-title">
+            <h2 class="section-title" id="experience-title">Professional Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
@@ -279,14 +327,14 @@
             </div>
         </section>
 
-        <section id="projects">
-            <h2 class="section-title">Projects</h2>
+        <section id="projects" aria-labelledby="projects-title">
+            <h2 class="section-title" id="projects-title">Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-card-content">
                         <h3>Flappy</h3>
                         <p>A 2D game built using HTML, CSS, and JavaScript.</p>
-                        <a href="https://github.com/Xenonesis/NS-Flappy-Bird.git" target="_blank" class="project-link">
+                        <a href="https://github.com/Xenonesis/NS-Flappy-Bird.git" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Flappy project on GitHub (opens in new tab)">
                             View Project
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
@@ -296,7 +344,7 @@
                     <div class="project-card-content">
                         <h3>Movie Website (Cinesphere)</h3>
                         <p>A movie website developed to provide high-rated movies for free.</p>
-                        <a href="https://thecinesphere.netlify.app/" target="_blank" class="project-link">
+                        <a href="https://thecinesphere.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Cinesphere movie website (opens in new tab)">
                             View Project
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
@@ -365,8 +413,8 @@
             </div>
         </section>
         
-        <section id="blog">
-            <h2 class="section-title">Blog</h2>
+        <section id="blog" aria-labelledby="blog-title">
+            <h2 class="section-title" id="blog-title">Blog</h2>
             <div class="blog-grid">
                 <div class="blog-card">
                     <h3>Cybersecurity Best Practices</h3>
@@ -386,8 +434,8 @@
             </div>
         </section>
     
-        <section id="achievements">
-            <h2 class="section-title">Achievements</h2>
+        <section id="achievements" aria-labelledby="achievements-title">
+            <h2 class="section-title" id="achievements-title">Achievements</h2>
             <div class="achievements-grid">
                 <div class="achievement-item">
                     <h3>University Sports Leader</h3>
@@ -417,8 +465,8 @@
             </div>
         </section>
     
-        <section id="certifications">
-            <h2 class="section-title">Certifications</h2>
+        <section id="certifications" aria-labelledby="certifications-title">
+            <h2 class="section-title" id="certifications-title">Certifications</h2>
             <div class="certifications-grid">
                 <div class="certification-item">
                     <h3>Digital Footprint Certification</h3>
@@ -471,8 +519,8 @@
             </div>
         </section>
     
-        <section class="testimonials" id="testimonials">
-            <h2 class="section-title">Testimonials</h2>
+        <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
+            <h2 class="section-title" id="testimonials-title">Testimonials</h2>
             <div class="testimonial-carousel">
                 <div class="testimonial-track">
                     <div class="testimonial">
@@ -495,8 +543,8 @@
             </div>
         </section>
     
-        <section id="contact">
-            <h2 class="section-title">Get In Touch</h2>
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 class="section-title" id="contact-title">Get In Touch</h2>
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!</p>
@@ -551,8 +599,8 @@
         </div>
     </div>
     
-    <footer>
-        <div class="footer-social">
+    <footer role="contentinfo">
+        <div class="footer-social" aria-label="Social media links">
             <a href="https://www.linkedin.com/in/itisaddy/" target="_blank" aria-label="LinkedIn">
                 <i class="fab fa-linkedin-in"></i>
             </a>
