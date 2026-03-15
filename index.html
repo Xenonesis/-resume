@@ -11,16 +11,15 @@
     <meta property="og:url" content="https://adityatiwari.com">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Aditya Kumar Tiwari Portfolio</title>
-     <script src="https://cdn.jsdelivr.net/npm/chatbot.js"></script>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-     <!-- Header -->
-     <header class="bg-gray-900 text-white py-4">
-        <nav class="container mx-auto flex justify-between items-center px-4">
-            <div class="space-x-4 flex items-center">
+    <header>
+        <div class="header-inner">
+            <a href="#home" class="logo">AT</a>
+            <nav>
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
@@ -30,273 +29,366 @@
                 <a href="#achievements">Achievements</a>
                 <a href="#certifications">Certifications</a>
                 <a href="#contact">Contact</a>
-            </div>
-            <button id="darkModeToggle" class="bg-gray-700 p-2 rounded">🌙</button>
-        </nav>
+            </nav>
+            <button id="darkModeToggle" aria-label="Toggle dark mode">
+                <span>◐</span>
+            </button>
+        </div>
     </header>
-    <main id="home">
-        <section class="hero-section fade-in">
-            <h1>Aditya</h1>
-            <p>Cybersecurity Enthusiast | Web Developer | Lifelong Learner</p>
-            <a href="https://www.linkedin.com/in/itisaddy/" target="_blank" class="connect-link">Connect with me on LinkedIn</a>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1>Aditya <span>Kumar</span> Tiwari</h1>
+                <p>Cybersecurity Enthusiast | Web Developer | Lifelong Learner</p>
+                <a href="https://www.linkedin.com/in/itisaddy/" target="_blank" class="hero-cta">
+                    Connect with Me
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
         </section>
         
         <section id="about">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <img src="1.png" alt="Aditya Kumar Tiwari" class="profile-image">
-                <p>I'm Aditya, a passionate cybersecurity expert and web developer with a knack for building secure and scalable web applications. I love solving complex problems and continuously learning new technologies.</p>
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <img src="1.png" alt="Aditya Kumar Tiwari" class="about-image">
+                </div>
+                <div class="about-text">
+                    <p>I'm Aditya, a passionate cybersecurity expert and web developer with a knack for building secure and scalable web applications. I love solving complex problems and continuously learning new technologies.</p>
+                    <div class="video-wrapper">
+                        <iframe
+                            src="https://www.youtube.com/embed/2vMH8lITTCE?si=s9wame-5tIaupvmT"
+                            title="Introduction Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
             </div>
-            <div class="video-section">
-                <h3>Watch My Introduction</h3>
-                <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/2vMH8lITTCE?si=s9wame-5tIaupvmT"
-                    title="Introduction Video"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            
-        
-    
+        </section>
+
         <section id="skills">
-            <h2>Skills</h2>
-            <div class="skill-category">
-                <h3>Advanced</h3>
-                <ul class="skills-list">
-                    <li>
-                        <span class="skill-name">Digital Forensics</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 95%;"></div>
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Advanced</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Digital Forensics</span>
+                            <span class="skill-percent">95%</span>
                         </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">HTML</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 95%;"></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 95%"></div>
                         </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">Linux</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 90%;"></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">HTML</span>
+                            <span class="skill-percent">95%</span>
                         </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">Advanced Excel</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 95%;"></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 95%"></div>
                         </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">GitHub</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 90%;"></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Linux</span>
+                            <span class="skill-percent">90%</span>
                         </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">Ethical-Hacking</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 90%"></div>
                         </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">Networking</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Advanced Excel</span>
+                            <span class="skill-percent">95%</span>
                         </div>
-                    </li>
-                </ul>
-            </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">GitHub</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Ethical Hacking</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Networking</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
     
-            <div class="skill-category">
-                <h3>Intermediate</h3>
-                <ul class="skills-list">
-                    <li>
-                        <span class="skill-name">CSS</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                <div class="skill-category">
+                    <h3>Intermediate</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">CSS</span>
+                            <span class="skill-percent">85%</span>
                         </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">Python</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 70%;"></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 85%"></div>
                         </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">SQL</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 75%;"></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-percent">70%</span>
                         </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">Technical Support</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 70%"></div>
                         </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">Cyber Threat Management</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 75%;"></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">SQL</span>
+                            <span class="skill-percent">75%</span>
                         </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">Prompt Engineering</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 75%"></div>
                         </div>
-                    </li>
-                </ul>
-            </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Technical Support</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Cyber Threat Management</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Prompt Engineering</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
     
-            <div class="skill-category">
-                <h3>Beginner</h3>
-                <ul class="skills-list">
-                    <li>
-                        <span class="skill-name">JavaScript</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 60%;"></div>
+                <div class="skill-category">
+                    <h3>Beginner</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percent">60%</span>
                         </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">netlify</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 60%;"></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 60%"></div>
                         </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">Firebase</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 60%;"></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Netlify</span>
+                            <span class="skill-percent">60%</span>
                         </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">Penetration Testing</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 65%;"></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 60%"></div>
                         </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">Project Management</span>
-                        <div class="progress-bar">
-                            <div class="progress-bar-fill" style="width: 70%;"></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Firebase</span>
+                            <span class="skill-percent">60%</span>
                         </div>
-                    </li>
-                </ul>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Penetration Testing</span>
+                            <span class="skill-percent">65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Project Management</span>
+                            <span class="skill-percent">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     
         <section id="Experience">
-            <h2>Professional Experience</h2>
+            <h2 class="section-title">Professional Experience</h2>
             <div class="timeline">
-              <div class="timeline-item left">
-                <div class="timeline-content">
-                  <h3>Mentor (Part-time)</h3>
-                  <h4>JhaMobi Technologies Pvt. Ltd., Remote</h4>
-                  <p class="date">Aug 2024 - Present</p>
-                  <ul>
-                    <li>Provided technical mentorship in cybersecurity to junior professionals and interns.</li>
-                    <li>Guided team members through vulnerability assessments, threat analysis, and incident response strategies.</li>
-                    <li>Supported learners in mastering security frameworks, cloud security, and penetration testing.</li>
-                    <li>Ensured mentees understood best practices for securing networks and applications in real-world environments.</li>
-                  </ul>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mentor (Part-time)</h3>
+                        <h4>JhaMobi Technologies Pvt. Ltd., Remote</h4>
+                        <p class="date">Aug 2024 - Present</p>
+                        <ul>
+                            <li>Provided technical mentorship in cybersecurity to junior professionals and interns.</li>
+                            <li>Guided team members through vulnerability assessments, threat analysis, and incident response strategies.</li>
+                            <li>Supported learners in mastering security frameworks, cloud security, and penetration testing.</li>
+                            <li>Ensured mentees understood best practices for securing networks and applications in real-world environments.</li>
+                        </ul>
+                    </div>
                 </div>
-              </div>
-              <div class="timeline-item right">
-                <div class="timeline-content">
-                  <h3>Cybersecurity Intern</h3>
-                  <h4>Null, Remote</h4>
-                  <p class="date">Jun 2024 - Present</p>
-                  <ul>
-                    <li>Conducted vulnerability assessments and implemented robust network security protocols.</li>
-                    <li>Monitored network traffic and responded to security incidents with a focus on intrusion detection.</li>
-                    <li>Worked with remote teams to secure client systems, ensuring compliance with industry standards.</li>
-                    <li>Gained hands-on experience with SIEM tools, firewall configurations, and incident response strategies.</li>
-                  </ul>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Intern</h3>
+                        <h4>Null, Remote</h4>
+                        <p class="date">Jun 2024 - Present</p>
+                        <ul>
+                            <li>Conducted vulnerability assessments and implemented robust network security protocols.</li>
+                            <li>Monitored network traffic and responded to security incidents with a focus on intrusion detection.</li>
+                            <li>Worked with remote teams to secure client systems, ensuring compliance with industry standards.</li>
+                            <li>Gained hands-on experience with SIEM tools, firewall configurations, and incident response strategies.</li>
+                        </ul>
+                    </div>
                 </div>
-              </div>
             </div>
-          </section>
+        </section>
 
-          <section id="projects">
-            <h2>Projects</h2>
-            <!-- Project 1 -->
-            <div class="project-card">
-                <h3>Flappy</h3>
-                <p>A 2D game built using HTML, CSS, and JavaScript.</p>
-                <a href="https://github.com/Xenonesis/NS-Flappy-Bird.git" target="_blank">View Project</a>
-            </div>
-            <!-- Project 2 -->
-            <div class="project-card">
-                <h3>Movie Website (Cinesphere)</h3>
-                <p>A movie website developed to provide high-rated movies for free.</p>
-                <a href="https://thecinesphere.netlify.app/" target="_blank">View Project</a>
-            </div>
-            <!-- Project 3 -->
-            <div class="project-card">
-                <h3>Innova</h3>
-                <p>A modern, responsive e-commerce website designed for a seamless shopping experience.</p>
-                <a href="https://github.com/Xenonesis/Innova.git" target="_blank">View Project</a>
-            </div>
-            <!-- Project 4 -->
-            <div class="project-card">
-                <h3>SEO Optimized Website</h3>
-                <p>An SEO-optimized website to improve search engine visibility using best practices.</p>
-                <a href="https://github.com/Xenonesis/SEO-Website.git" target="_blank">View Project</a>
-            </div>
-            <!-- Project 5 -->
-            <div class="project-card">
-                <h3>MovieVerse Explorer</h3>
-                <p>A movie exploration site with dynamic content fetched from APIs to provide the latest movie info.</p>
-                <a href="https://github.com/Xenonesis/movieverse-explorer.git" target="_blank">View Project</a>
-            </div>
-            <!-- Project 6 -->
-            <div class="project-card">
-                <h3>Animate Responsive Tales</h3>
-                <p>A responsive and animated website showcasing creative storytelling techniques using animations.</p>
-                <a href="https://github.com/Xenonesis/animate-responsive-tales.git" target="_blank">View Project</a>
-            </div>
-            <!-- Project 7 -->
-            <div class="project-card">
-                <h3>PropDekho</h3>
-                <p>A real estate website that helps users find and explore properties easily.</p>
-                <a href="https://github.com/Xenonesis/Propdekho.git" target="_blank">View Project</a>
-            </div>
-            <!-- Project 8 -->
-            <div class="project-card">
-                <h3>Real Estate Chatbot</h3>
-                <p>A chatbot developed for real estate inquiries, offering users assistance in finding properties.</p>
-                <a href="https://github.com/Xenonesis/Real-state-BOT.git" target="_blank">View Project</a>
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h3>Flappy</h3>
+                        <p>A 2D game built using HTML, CSS, and JavaScript.</p>
+                        <a href="https://github.com/Xenonesis/NS-Flappy-Bird.git" target="_blank" class="project-link">
+                            View Project
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h3>Movie Website (Cinesphere)</h3>
+                        <p>A movie website developed to provide high-rated movies for free.</p>
+                        <a href="https://thecinesphere.netlify.app/" target="_blank" class="project-link">
+                            View Project
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h3>Innova</h3>
+                        <p>A modern, responsive e-commerce website designed for a seamless shopping experience.</p>
+                        <a href="https://github.com/Xenonesis/Innova.git" target="_blank" class="project-link">
+                            View Project
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h3>SEO Optimized Website</h3>
+                        <p>An SEO-optimized website to improve search engine visibility using best practices.</p>
+                        <a href="https://github.com/Xenonesis/SEO-Website.git" target="_blank" class="project-link">
+                            View Project
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h3>MovieVerse Explorer</h3>
+                        <p>A movie exploration site with dynamic content fetched from APIs to provide the latest movie info.</p>
+                        <a href="https://github.com/Xenonesis/movieverse-explorer.git" target="_blank" class="project-link">
+                            View Project
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h3>Animate Responsive Tales</h3>
+                        <p>A responsive and animated website showcasing creative storytelling techniques using animations.</p>
+                        <a href="https://github.com/Xenonesis/animate-responsive-tales.git" target="_blank" class="project-link">
+                            View Project
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h3>PropDekho</h3>
+                        <p>A real estate website that helps users find and explore properties easily.</p>
+                        <a href="https://github.com/Xenonesis/Propdekho.git" target="_blank" class="project-link">
+                            View Project
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-content">
+                        <h3>Real Estate Chatbot</h3>
+                        <p>A chatbot developed for real estate inquiries, offering users assistance in finding properties.</p>
+                        <a href="https://github.com/Xenonesis/Real-state-BOT.git" target="_blank" class="project-link">
+                            View Project
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
         
         <section id="blog">
-            <h2>Blog</h2>
-            <div class="blog-card">
-                <h3>Blog Post Title</h3>
-                <p>Snippet of the blog post.</p>
-                <a href="#">Read More</a>
-            </div>
-            <div class="blog-card">
-                <h3>Blog Post Title</h3>
-                <p>Snippet of the blog post.</p>
-                <a href="#">Read More</a>
-            </div>
-            <div class="blog-card">
-                <h3>Blog Post Title</h3>
-                <p>Snippet of the blog post.</p>
-                <a href="#">Read More</a>
+            <h2 class="section-title">Blog</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <h3>Cybersecurity Best Practices</h3>
+                    <p>Essential security measures every developer should implement in their applications.</p>
+                    <span class="blog-link">Read More →</span>
+                </div>
+                <div class="blog-card">
+                    <h3>Web Development Trends 2025</h3>
+                    <p>Exploring the latest technologies and frameworks shaping modern web development.</p>
+                    <span class="blog-link">Read More →</span>
+                </div>
+                <div class="blog-card">
+                    <h3>Building a Career in Tech</h3>
+                    <p>Insights and tips for launching a successful career in technology.</p>
+                    <span class="blog-link">Read More →</span>
+                </div>
             </div>
         </section>
     
         <section id="achievements">
-            <h2>Achievements</h2>
-            <div class="achievement-list">
+            <h2 class="section-title">Achievements</h2>
+            <div class="achievements-grid">
                 <div class="achievement-item">
                     <h3>University Sports Leader</h3>
                     <p>Sushant University | 2023 - 2024</p>
@@ -314,7 +406,7 @@
                     </ul>
                 </div>
                 <div class="achievement-item">
-                    <h3>Subhead at Gaming Nexus (Gaming Club)</h3>
+                    <h3>Subhead at Gaming Nexus</h3>
                     <p>Gaming Nexus | 2023 - Present</p>
                     <ul>
                         <li>Oversaw gaming tournaments and interactive workshops aimed at promoting esports on campus.</li>
@@ -322,179 +414,159 @@
                         <li>Mentored new members in strategy-based games, focusing on team-building and competitive gaming skills.</li>
                     </ul>
                 </div>
-                <!-- Add more achievements here -->
             </div>
         </section>
     
         <section id="certifications">
-            <h2>Certifications</h2>
-            <div class="certification-list">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
                 <div class="certification-item">
                     <h3>Digital Footprint Certification</h3>
-                    <p>Issued by United Latino Students Association. Obtained in August 2024.</p>
+                    <p>United Latino Students Association | Aug 2024</p>
                 </div>
                 <div class="certification-item">
                     <h3>Cisco Cyber Threat Management</h3>
-                    <p>Issued by CISCO. Currently in progress as of July 2024.</p>
+                    <p>CISCO | In Progress | Jul 2024</p>
                 </div>
                 <div class="certification-item">
                     <h3>OSForensics Triage Certification</h3>
-                    <p>Issued by OSForensics by PassMark Software. Currently in progress as of July 2024.</p>
+                    <p>OSForensics by PassMark | In Progress | Jul 2024</p>
                 </div>
                 <div class="certification-item">
                     <h3>Certified Cisco Ethical Hacker (CEH)</h3>
-                    <p>Issued by CISCO. Currently in progress as of June 2024.</p>
+                    <p>CISCO | In Progress | Jun 2024</p>
                 </div>
                 <div class="certification-item">
                     <h3>Cisco EndPoint Security</h3>
-                    <p>Issued by CISCO. Currently in progress as of June 2024.</p>
+                    <p>CISCO | In Progress | Jun 2024</p>
                 </div>
                 <div class="certification-item">
                     <h3>Foundations Of Computer Security</h3>
-                    <p>Issued by Google. Currently in progress as of August 2024.</p>
+                    <p>Google | In Progress | Aug 2024</p>
                 </div>
                 <div class="certification-item">
                     <h3>Technical Support Fundamentals</h3>
-                    <p>Issued by Google. Currently in progress as of August 2024.</p>
+                    <p>Google | Completed | Aug 2024</p>
                 </div>
                 <div class="certification-item">
                     <h3>Computer Architecture</h3>
-                    <p>Issued by Great Learning. Currently in progress as of July 2024.</p>
-                </div>
-                <div class="certification-item">
-                    <h3>Recent Advances In Freeform Electronics</h3>
-                    <p>Issued by Yonsei University. Currently in progress as of July 2024.</p>
+                    <p>Great Learning | In Progress | Jul 2024</p>
                 </div>
                 <div class="certification-item">
                     <h3>Excel For Intermediate Level</h3>
-                    <p>Issued by Great Learning. Currently in progress as of July 2024.</p>
+                    <p>Great Learning | In Progress | Jul 2024</p>
                 </div>
                 <div class="certification-item">
-                    <h3>Introduction To Prompt Engineering For Generative AI</h3>
-                    <p>Issued by LinkedIn. Currently in progress as of July 2024.</p>
+                    <h3>Prompt Engineering For Generative AI</h3>
+                    <p>LinkedIn | In Progress | Jul 2024</p>
                 </div>
                 <div class="certification-item">
                     <h3>Cybersecurity For Everyone</h3>
-                    <p>Issued by University of Maryland, College Park. Currently in progress as of July 2024.</p>
-                </div>
-                <div class="certification-item">
-                    <h3>Google Technical Support Fundamentals</h3>
-                    <p>Issued by Coursera-Google. Completed in July 2024.</p>
-                </div>
-                <div class="certification-item">
-                    <h3>Cisco Computer Hardware Basics</h3>
-                    <p>Issued by CISCO. Currently in progress as of June 2024.</p>
+                    <p>University of Maryland | In Progress | Jul 2024</p>
                 </div>
                 <div class="certification-item">
                     <h3>MS-Excel Advanced</h3>
-                    <p>Issued by Great Learning. Currently in progress as of June 2024.</p>
-                </div>
-                <div class="certification-item">
-                    <h3>Prompt Engineering For Chat GPT</h3>
-                    <p>Issued by Great Learning. Currently in progress as of June 2024.</p>
-                </div>
-                <div class="certification-item">
-                    <h3>Linux Tutorial</h3>
-                    <p>Issued by Great Learning. Currently in progress as of June 2024.</p>
+                    <p>Great Learning | In Progress | Jun 2024</p>
                 </div>
             </div>
         </section>
     
         <section class="testimonials" id="testimonials">
-            <h2>Testimonials</h2>
+            <h2 class="section-title">Testimonials</h2>
             <div class="testimonial-carousel">
-                <div class="testimonial">
-                    <p>"Aditya is a stellar student and proficient future technology professional..he has all the qualities to become an influential leader and a professional game changer...
-                        he is actively able to perform the most daunting tasks with enormous ease....as a mentor it is a privilege to impart professional skills to this stupendous future leader and top performer....
-                        11 on 10 to Aditya...keep rocking and kick ass..👍👍👍"</p>
-                    <cite>- Siddhartth Anand(Aditya's Teacher)</cite>
+                <div class="testimonial-track">
+                    <div class="testimonial">
+                        <blockquote>"Aditya is a stellar student and proficient future technology professional..he has all the qualities to become an influential leader and a professional game changer... he is actively able to perform the most daunting tasks with enormous ease....as a mentor it is a privilege to impart professional skills to this stupendous future leader and top performer.... 11 on 10 to Aditya...keep rocking and kick ass.." </blockquote>
+                        <cite>— <strong>Siddhartth Anand</strong>, Aditya's Teacher</cite>
+                    </div>
+                    <div class="testimonial">
+                        <blockquote>"Aditya exemplifies resilience, curiosity, and purpose-driven learning. With a rare blend of humility and leadership, he turns challenges into opportunities for growth, inspiring those around him. A lifelong learner, Aditya is destined to make a meaningful impact, reminding us that true success is built with purpose, practice and heart."</blockquote>
+                        <cite>— <strong>Prateek Yadav</strong>, Aditya's Teacher</cite>
+                    </div>
+                    <div class="testimonial">
+                        <blockquote>"Aditya is a fantastic developer who knows how to secure applications and create user-friendly experiences. Highly recommended!"</blockquote>
+                        <cite>— <strong>Client</strong></cite>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p>"Aditya exemplifies resilience, curiosity, and purpose-driven learning. With a rare blend of humility and leadership, he turns challenges into opportunities for growth, inspiring those around him. A lifelong learner, Aditya is destined to make a meaningful impact, reminding us that true success is built with purpose, Practice and heart."</p>
-                    <cite>- Prateek Yadav(Aditya's Teacher)</cite>
-                </div>
-                <div class="testimonial">
-                    <p>"Aditya is a fantastic developer who knows how to secure applications and create user-friendly experiences. Highly recommended!"</p>
-                    <cite>- Client Name</cite>
-                </div>
-                <div class="testimonial">
-                    <p>"Exceptional work and great communication. Aditya's expertise in cybersecurity is top-notch!"</p>
-                    <cite>- Client Name</cite>
-                </div>
-                <div class="testimonial">
-                    <p>"A pleasure to work with. Aditya's projects are always of the highest quality and delivered on time."</p>
-                    <cite>- Client Name</cite>
-                </div>
-                <div class="controls">
-                    <button id="prevTestimonial">❮</button>
-                    <button id="nextTestimonial">❯</button>
+                <div class="testimonial-controls">
+                    <button id="prevTestimonial" aria-label="Previous testimonial">←</button>
+                    <button id="nextTestimonial" aria-label="Next testimonial">→</button>
                 </div>
             </div>
         </section>
     
         <section id="contact">
-            <h2>Contact</h2>
-            <form class="contact-form" action="mailto:itisaddy7@gmail.com" method="post" enctype="text/plain">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-    
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-    
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-    
-                <input type="submit" value="Send Message">
-            </form>
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!</p>
+                </div>
+                <form class="contact-form" action="mailto:itisaddy7@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
         </section>
-
-      <!-- Bot Container -->
-<div id="botContainer" class="bot-container">
-    <div id="botChatbox">
-        <button id="closeButton" onclick="document.getElementById('botContainer').style.display='none';">✖</button>
-        <div class="side-icon">
-            <img src="bot.icon.jpg" alt="Bot Icon" />
-        </div>
-        <div id="botMessages">
-            <div class="message bot">Hello! 👋 How can I assist you today?</div>
-        </div>
-        <div class="input-container">
-            <input type="text" id="userInput" placeholder="Type your message..." />
-            <button id="sendMessage">Send</button>
-        </div>
-    </div>
-</div>
-
-
-</div>
     </main>
-    
-    <footer>
-        <div id="popup" class="popup">
-            <div class="popup-content">
-                <h2>Connect with Me!</h2>
-                <a href="https://www.linkedin.com/in/itisaddy/" target="_blank" class="connect-link">LinkedIn</a>
-                <a href="https://github.com/Xenonesis" target="_blank" class="connect-link">GitHub</a>
-                <a href="https://www.instagram.com/i__aditya7/?utm_source=ig_web_button_share_sheet" target="_blank" class="connect-link">Instagram</a>
-                <button class="close" onclick="closePopup()">Close</button>
+
+    <div class="bot-container">
+        <button class="bot-toggle" id="botToggle" aria-label="Toggle chatbot">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/></svg>
+        </button>
+        <div class="bot-chatbox" id="botChatbox">
+            <div class="bot-header">
+                <h4>Chat with me</h4>
+                <button class="bot-close" id="botClose">×</button>
+            </div>
+            <div class="bot-messages" id="botMessages">
+                <div class="bot-message bot">Hello! How can I assist you today?</div>
+            </div>
+            <div class="bot-input-wrapper">
+                <input type="text" id="userInput" placeholder="Type your message...">
+                <button id="sendMessage">Send</button>
             </div>
         </div>
-        <footer>
-    <div class="social-media">
-        <a href="https://www.linkedin.com/in/itisaddy/" target="_blank" class="social-link">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://www.instagram.com/i__aditya7/?utm_source=ig_web_button_share_sheet" target="_blank" class="social-link">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://github.com/Xenonesis" target="_blank" class="social-link">
-            <i class="fab fa-github"></i>
-        </a>
     </div>
-    <p>© 2024 Aditya. All Rights Reserved.</p>
-</footer>
-<script src="chatbot.js"></script>
-<script src="script1.js"></script>
-</body>
 
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">×</button>
+            <h2>Connect with Me!</h2>
+            <div class="popup-links">
+                <a href="https://www.linkedin.com/in/itisaddy/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Xenonesis" target="_blank">GitHub</a>
+                <a href="https://www.instagram.com/i__aditya7/?utm_source=ig_web_button_share_sheet" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/itisaddy/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/i__aditya7/?utm_source=ig_web_button_share_sheet" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://github.com/Xenonesis" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Aditya. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script1.js"></script>
+    <script src="chatbot.js"></script>
+</body>
 </html>

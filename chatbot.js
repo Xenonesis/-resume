@@ -5,16 +5,14 @@ const botMessagesContainer = document.getElementById('botMessages');
 // Attach event listener to send button
 document.getElementById('sendMessage').addEventListener('click', function () {
     const userInput = document.getElementById('userInput').value.trim();
-    if (userInput === "" || isLearningMode) return; // Prevent empty input or input when in learning mode
+    if (userInput === "" || isLearningMode) return;
 
     addMessage(userInput, 'user');
-    document.getElementById('userInput').value = ''; // Clear the input field
+    document.getElementById('userInput').value = '';
 
-    // Simulate bot typing animation
     setTimeout(function () {
         addMessage('Typing...', 'bot typing');
 
-        // Simulate response time
         setTimeout(function () {
             const typingMessage = document.querySelector('.typing');
             if (typingMessage) typingMessage.remove();
@@ -25,10 +23,17 @@ document.getElementById('sendMessage').addEventListener('click', function () {
     }, 500);
 });
 
+// Allow sending with Enter key
+document.getElementById('userInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        document.getElementById('sendMessage').click();
+    }
+});
+
 // Function to add messages to the chat container
 function addMessage(message, type) {
     const messageDiv = document.createElement('div');
-    messageDiv.className = `message ${type}`;
+    messageDiv.className = `bot-message ${type}`;
     messageDiv.innerText = message;
     botMessagesContainer.appendChild(messageDiv);
     botMessagesContainer.scrollTop = botMessagesContainer.scrollHeight;
@@ -77,7 +82,7 @@ function getBotResponse(input) {
         sad: 'I’m sorry to hear that. 😔 If you’d like to talk, I’m here for you.',
         skills: 'Here are some of my skills: 💻 Web Development, Cybersecurity, Ethical Hacking, Data Analysis.',
         projects: 'Check out my projects on GitHub: 👨‍💻 https://github.com/Xenonesis.',
-        contact: 'Feel free to email me at: ✉️ ffjawed@gmail.com.',
+        contact: 'Feel free to email me at: ✉️ itisaddy7@gmail.com.',
         thank: 'You’re welcome 😊 I’m glad I could help.',
         thanks: 'No problem Happy to assist 🙌',
         help: 'I’m here to help 🤔 What do you need assistance with?',
