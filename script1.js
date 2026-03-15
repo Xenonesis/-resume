@@ -1,7 +1,10 @@
 // Load dark mode preference on page load
 document.addEventListener('DOMContentLoaded', function() {
     const darkModeToggle = document.getElementById('darkModeToggle');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('main-nav');
     
+    // Dark mode toggle
     if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
         if (darkModeToggle) {
@@ -15,6 +18,25 @@ document.addEventListener('DOMContentLoaded', function() {
             const isDark = document.body.classList.contains('dark-mode');
             darkModeToggle.innerHTML = isDark ? '<span>☀️</span>' : '<span>◐</span>';
             localStorage.setItem('darkMode', isDark);
+        });
+    }
+    
+    // Mobile menu toggle
+    if (mobileMenuBtn && mainNav) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+            const isExpanded = mainNav.classList.contains('active');
+            mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
+        });
+        
+        // Close menu when clicking a link
+        mainNav.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
         });
     }
 });
